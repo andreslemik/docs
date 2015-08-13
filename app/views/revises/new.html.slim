@@ -1,0 +1,11 @@
+- title = 'Новый акт сверки'
+h3 = title
+.row
+  .large-8.large-centered.columns
+    == render 'form'
+.row
+  .large-8.large-centered.columns
+    = link_to 'Назад', revises_path, class: 'button secondary'
+
+- content_for :title
+  = title

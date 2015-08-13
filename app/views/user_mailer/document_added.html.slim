@@ -1,0 +1,5 @@
+p К заказу №#{@order.id} добавлен документ:
+p
+  = "#{@document.document_type.name}"
+  = " на сумму #{number_to_currency(@document.summa)}" unless @document.summa.blank?
+p Добавил: #{@document.user.full_name} (#{@document.user.email})

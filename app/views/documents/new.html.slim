@@ -1,0 +1,12 @@
+- title = "Новый документ к заказу №#{@order.id}"
+- set_title(title)
+
+h3 = title
+.row
+  .large-8.large-centered.columns
+    == render 'form_new'
+
+.row
+  .large-8.large-centered.columns
+    ul.button-group
+      li = link_to 'Назад', :back, class: 'button secondary'

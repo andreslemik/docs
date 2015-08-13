@@ -1,0 +1,27 @@
+.row
+  .large-9.columns
+    = paginate @messages, options: {data: {push: 'partial', target: '#messages'}}
+    table
+      thead
+        tr
+          th(colspan="2")
+          th.text-center Тема
+          th.text-center = @box == 'inbox' ? "Отправитель" : "Получатель"
+          th.text-center Дата
+          th
+      tbody
+      - @messages.each do |m|
+        tr
+          - if @box == 'inbox'
+            td = link_to m.recipients.first.readed ? icon(:eye, :medium) : icon(:'burst-new', :medium), m, data: {replace: true, target: '#main'}
+          - else
+            td = link_to icon(:eye, :medium), m, data: {replace: true, target: '#main'}
+          td = icon(:paperclip, :medium) unless m.attachment.blank?
+          td = m.subject
+          - if @box == 'inbox'
+            td = m.user.full_name
+          - else
+            - users = User.find(m.recipients.collect(&:user_id))
+            td = users.collect(&:full_name).join(', ')
+          td = m.created_at.localtime.strftime('%d.%m.%Y %H:%M')
+    = paginate @messages, options: {data: {push: 'partial', target: '#messages'}}

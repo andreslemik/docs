@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: Сыр
+  full_name: Сыр Российский
+  partner_number: 01
+  nomenclature_type_id: 1
+
+two:
+  id: 2
+  name: Колбаса
+  full_name: Колбаса Краковская
+  partner_number: 02
+  nomenclature_type_id: 2

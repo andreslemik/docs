@@ -1,0 +1,4 @@
+dl.sub-nav
+  dt &nbsp;
+  - @cms_site.pages.root.children.published.each do |page|
+    dd = link_to page.label, page.full_path

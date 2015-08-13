@@ -1,0 +1,112 @@
+//= require_tree .
+//= require jquery-ui/datepicker
+//= require jquery-ui/vader
+//= require_self
+
+body {
+  background: image-url('body-bg.gif') repeat-x scroll 0 0 #FFFFFF;
+  color: #4C4C4C;
+}
+
+
+.border-bottom {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+
+
+.banner {
+  padding: 11px 0 18px;
+  font-family: Georgia, serif;
+  
+  h1 {
+    text-shadow: 0px 2px 3px rgb(194, 194, 194);
+    color: #FFFFFF;
+    font-size: rem-calc(60);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 60px;
+    padding-bottom: 6px;
+    font-family: Georgia, serif;
+  }
+  
+  p {
+    color: #7B7B7B;
+    font-size: rem-calc(22);
+    font-style: italic;
+    line-height: rem-calc(25);
+    margin:0;
+    padding:0;
+    outline:0;
+  }
+}
+
+.row.full-width {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+
+
+/* icons */
+$icon-color: #797D6F;
+@mixin icon-shadow {
+  text-shadow: 0 1px 0 #0092B3, 0 2px 0 #0087A6, 0 3px 0 #008099, 0 4px 0 #00758C, 0 5px 0 #555555, 0 6px 0 #006A80, 0 0 0 #006073, 0 8px 7px #005566;
+}
+@mixin icon-base($font-size) {
+  color: $icon-color;
+  font-size: $font-size;
+}
+.icon-mail {
+  font-size: (1rem);
+}
+.icon-large-shadow {
+  @include icon-base(2rem);
+  @include icon-shadow;
+}
+.icon-medium-shadow {
+  @include icon-base(1.4rem);
+  @include icon-shadow;
+ }
+.icon-small-shadow {
+  @include icon-base(1rem);
+  @include icon-shadow;
+}
+
+.icon-large {
+  @include icon-base(2rem);
+  }
+.icon-medium {
+  @include icon-base(1.4rem);
+  }
+.icon-small {
+  @include icon-base(1rem);
+  }
+
+
+
+/* load indicator */
+.loading-indicator {
+  position: fixed;
+  background-image: asset-data-url('loading.gif');
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  margin-left:-100px;
+  margin-top:-120px;
+  z-index: 9998;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.currency {
+  text-align: right !important;
+  white-space:nowrap;
+}
+
+#clear-datepicker {
+  cursor: pointer;
+}

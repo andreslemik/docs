@@ -1,0 +1,47 @@
+= simple_form_for(@message) do |f|
+  == render partial: 'form_shared/errors', locals: {model_var: @message}
+
+  .form-inputs
+    .row
+      .large-6.large-push-6.columns
+        - if @logist
+          fieldset
+            legend Получатели
+            dl.accordion(data-accordion)
+              dd
+                = link_to 'Дистрибьюторы', '#acc1'
+                #acc1.content.active
+                  = f.simple_fields_for :recipients do |r|
+                    - if r.object.user.has_role?(:distributor)
+                      = r.input :_destroy, as: :boolean, label: false do
+                        = r.check_box :_destroy, {class: 'distributor'}, 'false', 'true'
+                        - recipient_name = r.object.user.distributor.nil? ? 'не задан' : r.object.user.distributor.name if r.object.user.has_role?(:distributor)
+                        = r.object.user.full_name + ' (' + recipient_name + ')'
+                      = r.input :user_id, as: :hidden
+                  = link_to 'Выбрать всех', '#', class: 'button secondary tiny check_all', id: 'check_distr', data: {checks: 'distributor', switch: 0}
+              dd
+                = link_to 'Логисты', '#acc2'
+                #acc2.content
+                  = f.simple_fields_for :recipients do |r|
+                    - if r.object.user.has_role?(:logist)
+                      = r.input :_destroy, as: :boolean, label: false do
+                        = r.check_box :_destroy, {class: 'logist'}, 'false', 'true'
+                        = r.object.user.full_name
+                      = r.input :user_id, as: :hidden
+                  = link_to 'Выбрать всех', '#', class: 'button secondary tiny check_all', id: 'check_logist', data: {checks: 'logist', switch: 0}
+
+        - else
+          = f.simple_fields_for :recipients do |r|
+            = r.input :user_id, as: :hidden
+
+
+      .large-6.large-pull-6.columns
+        = f.input :subject, label: 'Тема:'
+        = f.input :body, label: false
+        = f.input :attachment, as: :file, label: 'Вложение'
+        = f.association :user, as: :hidden, input_html: {value: @message.user_id.blank? ? User.current.id : @message.user_id}
+        = f.input :parent_id, as: :hidden, input_html: {value: params[:parent_id]}
+
+    .row
+      .large-6.large-centered.columns
+        = f.button :submit, 'Отправить'

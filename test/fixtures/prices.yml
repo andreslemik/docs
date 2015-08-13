@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  distributor: distributors(:one)
+  nomenclature: nomenclatures(:one)
+  price: 9.99
+
+two:
+  id: 2
+  distributor: distributors(:two)
+  nomenclature: nomenclatures(:two)
+  price: 20.00

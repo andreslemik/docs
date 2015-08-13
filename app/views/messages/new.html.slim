@@ -1,0 +1,8 @@
+- set_title(@title)
+.row
+  .large-9.large-centered.columns
+    h3 = @title
+
+    == render 'form'
+
+    = link_to 'Отмена', messages_path, class: 'button secondary small', data: {push: true, target: '#main'}

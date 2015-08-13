@@ -1,0 +1,28 @@
+= search_form_for @search, defaults: {required: false}, data: {push: 'partial', target: '#orders'} do |f|
+  fieldset
+    legend Фильтр
+    .row
+      .large-6.columns
+        = f.text_field :id_eq, placeholder: 'Номер заказа', autocomplete: 'off'
+      .large-6.columns
+        .row.collapse
+          .large-10.columns
+            = f.input :created_at_date_equals, as: :datepicker, label: false, input_html: {placeholder: 'Дата заказа'}
+          .large-2.columns
+            span.postfix#clear-datepicker(data-no-turbolinks="true") X
+    - if @user_roles.include?('logist')
+      .row
+        .large-12.columns
+          = f.input :distributor_id_eq, as: :select, collection: Distributor.all, label: 'Дистрибьютор'
+    .row
+      .large-6.columns
+        - states = {}; Order.state_machine.states.map() { |s| states[s.human_name] = s.name }
+        = f.input :state_eq, as: :select, collection: states, label: 'Статус'
+      .large-6.columns
+        = f.input :docs_eq, as: :select, label: 'Док-ты'
+    .row
+      .large-12.columns
+
+
+    = f.submit "Найти", class: 'button secondary tiny'
+    = link_to 'Очистить', orders_path, class: 'button secondary tiny', data: {push: true, target: '#main'}

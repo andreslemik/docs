@@ -1,0 +1,20 @@
+nav.top-bar[data-topbar="" data-options="is_hover: false" role="navigation"]
+  ul.title-area
+    li.name
+      h1 = link_to 'Docs', root_path
+    li.toggle-topbar.menu-icon
+      = link_to content_tag(:span, 'Меню'), '#'
+  section.top-bar-section
+    - if current_user
+      ul.left
+        = render 'layouts/navigation_links'
+    ul.right
+      li.divider
+      - if current_user
+        li
+          = link_to current_user.email, "#", data: {dropdown: "drop1"}
+          ul#drop1.f-dropdown(data-dropdown-content="")
+            li = link_to 'Выход', Rails.env.development? ? logout_path : logout_url, method: :delete
+      - else
+        li
+          = link_to 'Войти', Rails.env.development? ? login_path : login_url(protocol: 'https')

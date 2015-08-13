@@ -1,0 +1,11 @@
+- title = "Изменение заказа №#{@order.id} от #{@order.created_at.to_time.to_s(:ru_date)}"
+.row
+  .large-12.columns
+    h3 = title
+
+    - if current_user.has_role? :distributor
+      == render 'form'
+    - else
+      == render 'form_logist'
+
+- set_title(title)

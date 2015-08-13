@@ -1,0 +1,5 @@
+= simple_form_for([@order, @document]) do |f|
+  = f.error_notification
+  = f.association :user, as: :hidden, input_html:  {value: current_user.id}
+
+  == render partial: 'form_fields', locals: { f: f }

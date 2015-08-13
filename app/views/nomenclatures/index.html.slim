@@ -1,0 +1,21 @@
+- title = "Список номенклатуры"
+- set_title(title)
+
+h3 Список номенклатуры
+.row
+  .large-3.columns
+    = search_form_for @search, url: @url, defaults: {required: false}, data: {push: 'partial', target: '#nomenclature'} do |f|
+      .row.collapse
+        .large-9.columns
+          = f.input :name_or_partner_number_cont, label: false, input_html: {placeholder: 'Номер или наименование', class: 'nomenclature-search'}
+        .large-3.columns
+          = f.submit 'Найти', class: 'button postfix'
+  .large-1.columns.end
+    = link_to 'Очисить', nomenclatures_path, class: 'button postfix secondary', data: {push: true, target: '#main'}
+
+== render 'nomenclatures/table'
+
+
+br
+
+= link_to 'Добавить', new_nomenclature_path, class: 'button secondary'

@@ -1,0 +1,31 @@
+- if tab == 'invoices'
+  - url = invoices_path
+  - doctypes = DocumentType.where(tab: DocumentType.tabs[:invoices])
+- else
+  - url = delivers_path
+  - doctypes = DocumentType.where(tab: DocumentType.tabs[:delivers])
+= search_form_for @search, url: url, defaults: {required: false}, data: { push: 'partial', target: '#documents'} do |f|
+  fieldset
+    legend Фильтр
+    .row
+      .large-6.columns
+        = f.input :doc_no_eq, label: false, input_html: { placeholder: 'Номер док-та', autocomplete: "off" }
+      .large-6.columns
+        .row.collapse
+          .large-10.columns
+            = f.input :doc_date_eq, as: :datepicker, label: false, input_html: { placeholder: 'Дата док-та' }
+          .large-2.columns
+            span.postfix#clear-datepicker(data-no-turbolinks="true") X
+    - if @user_roles.include?('logist')
+      .row
+        .large-12.columns
+          = f.input :distributor_id_eq, as: :select, collection: Distributor.all, label: 'Дистрибьютор'
+    .row
+      .large-6.columns
+        = f.input :order_id_eq, label: 'Номер заказа', input_html: { autocomplete: "off" }
+      .large-6.columns
+        = f.input :document_type_id_eq, as: :select, collection: doctypes, label: 'Тип документа'
+
+
+    = f.submit "Найти", class: 'button secondary tiny'
+    = link_to 'Очистить', session[:previous_path], class: 'button secondary tiny', data: {push: true, target: '#main'}

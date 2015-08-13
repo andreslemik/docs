@@ -1,0 +1,36 @@
+- title = "Заказ №#{@order.id} от #{@order.created_at.to_time.to_s(:ru_date)}"
+h3 = title
+.row
+  .small-8.columns
+    == render 'order_items'
+    .row
+      .large-4.large-centered.columns
+        ul.button-group
+          li
+            = link_to 'Изменить', edit_order_path(@order) +'#', class: 'button secondary small'
+          li
+            = link_to 'Назад', session[:previous_path], class: 'button secondary small', data: {push: true, target: '#main'}
+    hr
+
+
+  .small-4.columns
+    panel
+      dl
+        dt Статус заказа:
+        dd == "<span class=\"#{@order.state_name} button tiny\"> #{@order.human_state_name} </span>"
+        dt Комментарий:
+        dd = @order.memo
+        - if @order.docs
+          dt = icon(:'page-doc', :large) + " Документы получены"
+
+.row
+  .large-3.columns
+    h4 Документы
+  .large-9.columns
+    = link_to 'Добавить', new_order_document_path(@order), class: 'button tiny secondary'
+.row
+  .large-12.columns
+    #documents
+      == render partial: 'documents/documents_table'
+
+- set_title(title)

@@ -1,0 +1,11 @@
+doctype 5
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+  body
+    - order_version = @order.versions.last
+    - update_date = Russian::strftime(order_version.created_at.localtime, "%d %B %Y %H:%M")
+    p = "Заказ №#{@order.id} (#{@order.distributor.name}) был изменён #{update_date} (MSK)"
+    - updated_user = User.find_by_id(order_version.whodunnit)
+    p = "Автор изменений: #{updated_user.full_name} (#{updated_user.email})"
+

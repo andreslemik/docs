@@ -1,0 +1,58 @@
+= simple_nested_form_for @order do |f|
+  = f.error_notification
+  - new_order = current_page?(action: 'new')
+  .row
+    .small-8.column
+      fieldset
+        legend Позиции заказа
+        - create_items = current_user.can_create?(OrderItem, for: @order)
+        table#items
+          tr
+            th
+            th
+            th Партнерский номер
+            th Цена
+            th Кол-во
+            th Сумма
+            th НДС
+            th
+          = f.simple_fields_for :order_items, wrapper: false do |oi|
+            tr.fields
+              td = link_to icon(:book, :medium), '#', class: 'open-search-nomenclature', data: {no_turbolink: true} \
+                if create_items
+              td = oi.association :nomenclature, as: :hidden
+              td(width="230") = oi.input :partner_number, label: false
+              td = oi.input :price, as: :string, label: false, input_html: {readonly: true, class: 'text-right', step: 0}
+              td.quantity-fields = oi.input :quantity, label: false, input_html: {class: 'text-center'}
+              td = oi.input :summa, label: false, input_html: {class: 'text-right', readonly: true}
+              td(width="80") = oi.input :nds, label: false, input_html: {class: 'text-right', readonly: true}
+              td = oi.link_to_remove icon(:trash, :medium), title: 'Удалить' if create_items
+        .row
+          .small-6.columns
+            p = f.link_to_add icon(:plus, :medium), :order_items, data: {target: '#items'}, title: 'Добавить позицию' \
+              if create_items && !@nomenclatures.nil?
+            input#ids(type="hidden")
+        - if create_items
+          .reveal-modal#nomenclature(data-reveal)
+            == render 'nomenclature_search'
+      .row
+        .large-4.large-centered.columns
+          .actions
+            = f.button :submit, 'Сохранить'
+      .row
+        .large-4.large-centered.columns
+          ul.button-group
+            li
+              = link_to 'Показать', @order, class: 'button secondary small', data: {push: true, target: '#main'}
+            li
+              = link_to 'Назад', orders_path, class: 'button secondary small', data: {push: true, target: '#main'}
+
+    .small-4.columns
+      fieldset
+        legend Параметры заказа
+        p == "Статус: <span class=\"#{@order.state_name} button tiny\">#{@order.human_state_name}</span>"
+        = f.input :memo, label: 'Комментарий', input_html: {rows: 3}
+        = f.input(:docs, as: :boolean, label: 'Документы получены') if @order.docsable_by?(current_user)
+        = f.association :user, as: :hidden, input_html: {value: @order.user_id.blank? ? User.current.id : @order.user_id}
+        = f.association :distributor, as: :hidden, input_html: {value: @order.distributor_id.blank? ? @distributor_id : @order.distributor_id}
+  

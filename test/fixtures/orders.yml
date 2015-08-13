@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distributor_id: 
+  user_id: 
+  memo: MyText
+
+two:
+  distributor_id: 
+  user_id: 
+  memo: MyText

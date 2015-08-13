@@ -1,0 +1,11 @@
+.row
+  .large-9.large-centered.columns
+    #n-search
+      h2 Выбор номенклатуры
+      - unless @nomenclatures.nil?
+        = paginate @nomenclatures, remote: true
+        #nomenclature-table
+          = render 'orders/nomenclature_table'
+
+
+= link_to icon(:"x-circle", :medium), '#', class: 'close-reveal-modal'

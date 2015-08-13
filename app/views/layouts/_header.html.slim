@@ -1,0 +1,16 @@
+.contain-to-grid
+  nav.top-bar[data-topbar="" data-options="is_hover: false"]
+    ul.title-area
+      li.name
+        h1 
+          = link_to 'Docs', root_path
+      li.toggle-topbar.menu-icon
+        a href="#"
+          span Меню
+    section.top-bar-section
+      ul.right
+        li = link_to 'Главная', root_path
+        li = link_to 'О нас', '#'
+        li = link_to 'Продукты', '#'
+        li = link_to 'Партнёрам', '#'
+        li = link_to 'Контакты', '#'

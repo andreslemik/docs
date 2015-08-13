@@ -1,0 +1,58 @@
+ru:
+  documenttype_tab:
+    invoices: 'Счета и платежки'
+    delivers: 'Накладные и счета-фактуры'
+  activerecord:
+    models:
+      nomenclature_type: 
+        one: 'Тип номенклатуры'
+        few: 'Типов номенклатуры'
+        many: 'Типа номенклатуры'
+        other: 'Типы номенклатуры'
+      user:
+        one: 'Пользователь'
+        few: 'Пользователей'
+        many: 'Пользователя'
+        other: 'Пользователи'
+      role:
+        one: 'Роль'
+        few: 'Ролей'
+        many: 'Ролей'
+        other: 'Роли'
+      document_type:
+        one: 'Тип документов'
+        few: 'Типов документов'
+        many: 'Типов документов'
+        other: 'Типы документов'
+      order:
+        one: 'Заказ'
+        few: 'Заказов'
+        many: 'Заказов'
+        other: 'Заказы'
+      nomenclature:
+        one: 'Номенклатура'
+        few: 'Номенклатур'
+        many: 'Номенклатур'
+        other: 'Номенклатура'
+      revise:
+        one: 'Акт сверки'
+        few: 'Актов сверки'
+        many: 'Актов сверки'
+        other: 'Акты сверок'
+    attributes:
+      nomenclature_type:
+        id: 'ID'
+        name: 'Название'
+        created_at: 'Создано'
+        updated_at: 'Обновлено'
+        
+  views:
+    pagination:
+      first: "&laquo; "
+      last: " &raquo;"
+      previous: "&lsaquo; "
+      next: " &rsaquo;"
+      truncate: "&hellip;"
+      
+  unauthorized:
+    default: "Недостаточно прав"

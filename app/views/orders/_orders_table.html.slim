@@ -1,0 +1,31 @@
+= paginate @orders, options: {data: {push: 'partial', target: '#orders'}}
+table
+  tr
+    - if @user_roles.include?('logist')
+      th Дистрибьютор
+    th Номер
+    th Дата
+    th Статус
+    th Примечание
+    th Док&#8209;ты
+    th Сумма
+    th НДС <span class="small">(в т.ч.)</span>
+    th
+    th
+    th
+  - @orders.each do |order|
+    tr
+      - if @user_roles.include?('logist')
+        td = order.distributor.name unless order.distributor.blank?
+      td.text-center = order.id
+      td = order.created_at.to_time.to_s(:ru_date)
+      td(class="#{order.state_name} text-center") = order.human_state_name
+      td = order.memo
+      td.text-center = icon(:check, :medium) if order.docs
+      td.currency = number_to_currency(order.total_summa)
+      td.currency = number_to_currency(order.total_nds)
+      td = link_to icon(:eye, :medium), order, title: 'Открыть', data: {push: true, target: '#main'}
+      td = link_to icon(:pencil, :medium), edit_order_path(order) + '#', title: 'Изменить'
+      td = link_to icon(:trash, :medium), order, data: {:confirm => 'Вы уверены?'}, :method => :delete, title: 'Удалить' \
+          if order.deletable_by?(current_user)
+= paginate @orders, options: {data: {push: 'partial', target: '#orders'}}

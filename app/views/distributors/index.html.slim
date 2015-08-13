@@ -1,0 +1,19 @@
+h3 Список дистрибьюторов
+= paginate @distributors
+table
+  tr
+    th Наименование
+    th Пользователь
+    th
+    th
+  - @distributors.each do |d|
+    tr
+      td = d.name
+      td = d.user.email unless d.user.blank?
+      td = link_to icon(:pencil, :medium), edit_distributor_path(d), title: 'Изменить'
+      td = link_to icon(:trash, :medium), d, data: {:confirm => 'Вы уверены?'}, :method => :delete, title: 'Удалить'
+
+
+br
+
+= link_to 'Добавить', new_distributor_path, class: 'button secondary'

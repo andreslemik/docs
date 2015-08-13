@@ -1,0 +1,12 @@
+= simple_form_for(@distributor) do |f|
+  = f.error_notification
+  .form-inputs
+    - distrs = Distributor.all.pluck(:user_id)
+    - distrs.delete(@distributor.user_id)
+
+    = f.input :name, label: 'Наименование'
+    = f.association :user, collection: User.with_role(:distributor).where('users.id NOT IN (?)', distrs.blank? ? 0 : distrs),
+                    label_method: :email, value_method: :id, label: 'Пользователь'
+
+  .form-actions
+    = f.button :submit, 'Сохранить'

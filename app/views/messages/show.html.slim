@@ -1,0 +1,16 @@
+- set_title(@title)
+.row
+  .large-6.large-centered.columns
+    == render partial: 'show_message', locals: {message: @message}
+
+
+.row
+  .large-6.large-centered.columns
+    hr
+    .large-6.columns
+      = link_to 'Назад', session[:previous_path], class: 'button secondary tiny', data: {push: true, target: '#main'}
+      - unless @message.user == User.current
+        = link_to 'Ответить', reply_message_path(@message), class: 'button secondary tiny'
+      = link_to 'Удалить', sdestroy_message_path(@message), class: 'button secondary tiny', data: {confirm: 'Удалить сообщение?'}
+    .large-6.columns.text-right
+      = link_to icon(:skull, :medium), @message, method: :delete, data: {confirm: 'Сообщение будет удалено безвозвратно'} if @message.user == current_user && @user_roles.include?('logist')

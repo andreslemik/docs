@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    state_machines:
+      order:
+        states:
+          pending: 'Сформирован'
+          accepted: 'Согласован'
+          paid: 'Оплачен'
+          shipped: 'Отгружен'

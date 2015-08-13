@@ -1,0 +1,2149 @@
+
+---
+comfy_cms_layouts:
+  columns:
+  - id
+  - site_id
+  - parent_id
+  - app_layout
+  - label
+  - identifier
+  - content
+  - css
+  - js
+  - position
+  - is_shared
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - '3'
+    - application
+    - 3+2
+    - three-plus-two
+    - "<div class=\"row border-bottom\">\r\n  <div class=\"large-12 columns banner\">\r\n
+      \   {{ cms:page:slogan }}\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div
+      class=\"large-4 columns\">\r\n    {{ cms:page:column1:rich_text }}\r\n  </div>\r\n
+      \ <div class=\"large-4 columns\">\r\n    {{ cms:page:column2:rich_text }}\r\n
+      \ </div>\r\n  <div class=\"large-4 columns\">\r\n    {{ cms:page:column3:rich_text
+      }}\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"large-6 columns\">\r\n
+      \   {{ cms:page:column4:rich_text }}\r\n  </div>\r\n  <div class=\"large-6 columns\">\r\n
+      \   {{ cms:page:column5:rich_text }}\r\n  </div>\r\n</div>\r\n<footer>\r\n  <hr>\r\n
+      \ {{ cms:snippet:footer }}\r\n</footer>"
+    - ''
+    - ''
+    - '0'
+    - false
+    - '2015-07-16 09:42:51.481077'
+    - '2015-07-16 12:48:18.339775'
+  - - '2'
+    - '1'
+    - '3'
+    - application
+    - one_column
+    - one-column
+    - "<br /><br /><br />\r\n{{ cms:page:content:rich_text }}"
+    - ''
+    - ''
+    - '1'
+    - false
+    - '2015-07-16 11:18:10.680027'
+    - '2015-07-16 12:46:15.508433'
+  - - '3'
+    - '1'
+    - 
+    - application
+    - default
+    - default
+    - "{{ cms:page:slogan:rich_text }}"
+    - ''
+    - ''
+    - '2'
+    - false
+    - '2015-07-16 12:41:22.013764'
+    - '2015-07-16 12:47:52.314763'
+
+---
+versions:
+  columns:
+  - id
+  - item_type
+  - item_id
+  - event
+  - whodunnit
+  - object
+  - created_at
+  - object_changes
+  records: 
+  - - '2'
+    - User
+    - '1'
+    - update
+    - 
+    - "---\nid: 1\nemail: admin@example.com\nencrypted_password: \"$2a$10$jeo9TAksx2u0uWCFIVnDfupYXo01pucWIwe4uK0aeRpSaLpfy2Rgu\"\nreset_password_token:
+      \nreset_password_sent_at: \nremember_created_at: \nsign_in_count: 108\ncurrent_sign_in_at:
+      2015-07-26 07:25:54.700360000 Z\nlast_sign_in_at: 2015-07-17 08:48:19.437625000
+      Z\ncurrent_sign_in_ip: 10.0.2.2\nlast_sign_in_ip: 10.0.2.2\ncreated_at: 2014-04-09
+      13:48:03.374479000 Z\nupdated_at: 2015-07-26 07:25:54.701755000 Z\ndeleted_at:
+      \nfirst_name: Иван\nlast_name: Иванов\nfailed_attempts: 0\nunlock_token: \nlocked_at:
+      \n"
+    - '2015-07-26 07:31:19.885856'
+    - |
+      --- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      last_sign_in_at:
+      - 2015-07-17 08:48:19.437625000 Z
+      - &1 2015-07-26 07:25:54.700360000 Z
+      current_sign_in_at:
+      - *1
+      - 2015-07-26 07:31:19.869087471 Z
+      sign_in_count:
+      - 108
+      - 109
+      updated_at:
+      - 2015-07-26 07:25:54.701755000 Z
+      - 2015-07-26 07:31:19.871228757 Z
+
+---
+revises:
+  columns:
+  - id
+  - date_begin
+  - date_end
+  - memo
+  - distributor_id
+  - deleted_at
+  - created_at
+  - updated_at
+  - file
+  - state
+  records: 
+  - - '1'
+    - '2014-04-01'
+    - '2014-04-30'
+    - ''
+    - '2'
+    - 
+    - '2014-04-09 17:13:12.178963'
+    - '2014-04-24 12:39:40.123132'
+    - 20140401-20140430_1397063592.jpg
+    - fixed
+  - - '2'
+    - '2014-03-01'
+    - '2014-03-31'
+    - ''
+    - '1'
+    - 
+    - '2014-04-09 17:17:44.023326'
+    - '2014-04-09 17:17:44.023326'
+    - 20140301-20140331_1397063864.jpg
+    - pending
+
+---
+prices:
+  columns:
+  - id
+  - distributor_id
+  - nomenclature_id
+  - price
+  - created_at
+  - updated_at
+  - deleted_at
+  records: 
+  - - '2'
+    - '2'
+    - '1'
+    - '111.00'
+    - '2014-04-09 13:56:03.05309'
+    - '2014-04-09 13:56:03.05309'
+    - 
+  - - '4'
+    - '2'
+    - '2'
+    - '153.00'
+    - '2014-04-09 13:56:21.877005'
+    - '2014-04-09 13:56:21.877005'
+    - 
+  - - '7'
+    - '2'
+    - '6'
+    - '356.00'
+    - '2015-06-23 21:21:13.281865'
+    - '2015-06-23 21:21:13.281865'
+    - 
+  - - '8'
+    - '1'
+    - '2'
+    - '180.00'
+    - '2015-06-23 22:20:29.732725'
+    - '2015-06-23 22:20:29.732725'
+    - 
+  - - '9'
+    - '1'
+    - '1'
+    - '120.00'
+    - '2015-07-17 08:54:06.149381'
+    - '2015-07-17 08:54:06.149381'
+    - 
+
+---
+recipients:
+  columns:
+  - id
+  - message_id
+  - user_id
+  - readed
+  - created_at
+  - updated_at
+  - deleted
+  records: 
+  - - '1'
+    - '3'
+    - '1'
+    - true
+    - '2014-04-26 20:21:45'
+    - '2014-04-28 17:55:40.668938'
+    - true
+  - - '2'
+    - '4'
+    - '1'
+    - true
+    - '2014-04-26 14:56:50.953138'
+    - '2014-04-28 10:58:03.24254'
+    - false
+  - - '3'
+    - '2'
+    - '3'
+    - true
+    - '2014-04-26 20:24:38'
+    - '2014-04-29 08:35:27.177049'
+    - false
+  - - '4'
+    - '10'
+    - '3'
+    - true
+    - '2014-04-28 09:56:49.947573'
+    - '2014-04-28 10:54:53.212689'
+    - false
+  - - '5'
+    - '10'
+    - '4'
+    - false
+    - '2014-04-28 09:56:49.96971'
+    - '2014-04-28 09:56:49.96971'
+    - false
+  - - '6'
+    - '11'
+    - '3'
+    - false
+    - '2014-04-28 10:17:09.298276'
+    - '2014-04-28 10:17:09.298276'
+    - false
+  - - '7'
+    - '12'
+    - '4'
+    - false
+    - '2014-04-28 10:17:40.590277'
+    - '2014-04-28 10:17:40.590277'
+    - false
+  - - '8'
+    - '13'
+    - '1'
+    - true
+    - '2014-04-28 10:49:56.936835'
+    - '2014-04-28 10:57:50.349992'
+    - false
+  - - '9'
+    - '13'
+    - '2'
+    - true
+    - '2014-04-28 10:49:56.937982'
+    - '2014-04-29 10:24:32.781154'
+    - true
+  - - '10'
+    - '14'
+    - '3'
+    - true
+    - '2014-04-28 16:25:44.87837'
+    - '2014-04-29 09:42:06.051852'
+    - false
+  - - '11'
+    - '15'
+    - '3'
+    - true
+    - '2014-04-28 18:17:40.92814'
+    - '2014-04-29 11:40:21.564924'
+    - false
+  - - '12'
+    - '16'
+    - '3'
+    - true
+    - '2014-04-28 18:19:35.537162'
+    - '2014-04-29 11:40:24.578336'
+    - false
+  - - '13'
+    - '17'
+    - '1'
+    - true
+    - '2014-04-29 08:37:43.27028'
+    - '2014-04-29 08:38:00.931794'
+    - false
+  - - '14'
+    - '18'
+    - '2'
+    - true
+    - '2014-04-29 10:15:58.409729'
+    - '2014-04-29 10:24:39.708323'
+    - false
+  - - '15'
+    - '19'
+    - '1'
+    - true
+    - '2014-04-29 10:24:49.304243'
+    - '2014-04-29 11:38:44.040033'
+    - false
+  - - '16'
+    - '20'
+    - '1'
+    - true
+    - '2014-04-29 11:36:46.455979'
+    - '2014-04-29 11:38:47.777268'
+    - false
+  - - '17'
+    - '21'
+    - '1'
+    - true
+    - '2014-04-29 12:19:30.225106'
+    - '2014-04-29 12:20:14.005897'
+    - false
+  - - '18'
+    - '22'
+    - '3'
+    - true
+    - '2014-04-29 12:20:20.280157'
+    - '2014-04-29 12:21:56.134017'
+    - false
+  - - '19'
+    - '23'
+    - '3'
+    - true
+    - '2014-04-29 12:24:48.493412'
+    - '2014-04-29 12:26:15.831894'
+    - false
+
+---
+nomenclatures:
+  columns:
+  - id
+  - name
+  - full_name
+  - partner_number
+  - nomenclature_type_id
+  - created_at
+  - updated_at
+  - deleted_at
+  - archived
+  records: 
+  - - '1'
+    - Колбаса
+    - 
+    - D3504
+    - 
+    - '2014-04-09 13:56:03.049326'
+    - '2015-07-17 09:14:16.838999'
+    - 
+    - false
+  - - '2'
+    - Сыр
+    - 
+    - S1095
+    - 
+    - '2014-04-09 13:56:21.864351'
+    - '2015-07-17 09:14:05.600933'
+    - 
+    - false
+  - - '3'
+    - aasdasdasdada
+    - 
+    - '123'
+    - 
+    - '2014-04-18 12:48:14.000448'
+    - '2014-04-18 12:48:39.749626'
+    - '2014-04-18 12:48:39.749626'
+    - false
+  - - '6'
+    - Молоко
+    - 
+    - М9054
+    - 
+    - '2015-06-23 20:16:03.823819'
+    - '2015-07-17 09:14:23.711203'
+    - 
+    - false
+
+---
+users_roles:
+  columns:
+  - user_id
+  - role_id
+  records: 
+  - - '1'
+    - '1'
+  - - '1'
+    - '2'
+  - - '2'
+    - '2'
+  - - '3'
+    - '3'
+  - - '4'
+    - '3'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - deleted_at
+  - first_name
+  - last_name
+  - failed_attempts
+  - unlock_token
+  - locked_at
+  records: 
+  - - '1'
+    - admin@example.com
+    - "$2a$10$jeo9TAksx2u0uWCFIVnDfupYXo01pucWIwe4uK0aeRpSaLpfy2Rgu"
+    - 
+    - 
+    - 
+    - '109'
+    - '2015-07-26 07:31:19.869087'
+    - '2015-07-26 07:25:54.70036'
+    - 10.0.2.2
+    - 10.0.2.2
+    - '2014-04-09 13:48:03.374479'
+    - '2015-07-26 07:31:19.871228'
+    - 
+    - Иван
+    - Иванов
+    - '0'
+    - 
+    - 
+  - - '2'
+    - asvidersky@gmail.com
+    - "$2a$10$ELByl26J6P89SYVhrJrne.ZzPJvwawOdsGRcK1Ziq7snm4ptWwe9G"
+    - 
+    - 
+    - 
+    - '6'
+    - '2014-04-29 10:21:39.669534'
+    - '2014-04-29 10:21:08.887166'
+    - 192.168.10.120
+    - 192.168.10.120
+    - '2014-04-09 13:49:40.133709'
+    - '2015-07-17 08:47:35.958079'
+    - '2015-07-17 08:47:35.958079'
+    - "-"
+    - "-"
+    - '0'
+    - 
+    - 
+  - - '3'
+    - distr@example.com
+    - "$2a$10$zdQH1W1wBKO14VsdAgxX9eBYRkxNr/gLA.HJi6e5318HDR2SAM0UG"
+    - 
+    - 
+    - 
+    - '22'
+    - '2015-07-16 13:14:36.918226'
+    - '2015-03-20 08:08:11.853044'
+    - 10.0.2.2
+    - 10.0.2.2
+    - '2014-04-09 13:50:10.505445'
+    - '2015-07-16 13:14:36.920264'
+    - 
+    - Один
+    - Дистрибьютор
+    - '0'
+    - 
+    - 
+  - - '4'
+    - distr2@example.com
+    - "$2a$10$u1lhHhDie6/HP8fRqtHoW.nxlFrYau1jkV/6sMzNrJcq01K5sXRw6"
+    - 
+    - 
+    - 
+    - '5'
+    - '2014-04-28 10:00:50.867'
+    - '2014-04-24 14:38:28.728571'
+    - 192.168.10.120
+    - 192.168.10.120
+    - '2014-04-09 13:50:32.529303'
+    - '2014-04-29 09:02:06.56469'
+    - 
+    - Два
+    - Дистрибьютор
+    - '2'
+    - 
+    - 
+
+---
+messages:
+  columns:
+  - id
+  - subject
+  - body
+  - attachment
+  - user_id
+  - parent_id
+  - created_at
+  - updated_at
+  - deleted
+  - content_type
+  - file_size
+  records: 
+  - - '2'
+    - two
+    - 
+    - 
+    - '1'
+    - '1'
+    - '2014-04-26 20:24:43'
+    - '2014-04-26 15:41:11.258763'
+    - true
+    - 
+    - 
+  - - '3'
+    - three
+    - 
+    - 
+    - '1'
+    - '2'
+    - '2014-04-26 20:21:58'
+    - '2014-04-28 17:53:28.362765'
+    - true
+    - 
+    - 
+  - - '4'
+    - any text
+    - 
+    - 
+    - '3'
+    - 
+    - '2014-04-26 14:56:50.94748'
+    - '2014-04-28 17:47:04.286025'
+    - true
+    - 
+    - 
+  - - '7'
+    - test1
+    - test
+    - armstrong.jpg
+    - '1'
+    - 
+    - '2014-04-28 09:10:06.695467'
+    - '2014-04-28 09:10:06.695467'
+    - false
+    - image/jpeg
+    - '40508'
+  - - '9'
+    - '234'
+    - '234'
+    - 
+    - '1'
+    - 
+    - '2014-04-28 09:56:05.932984'
+    - '2014-04-28 09:56:05.932984'
+    - false
+    - 
+    - 
+  - - '10'
+    - Важное сообщение
+    - '1234'
+    - 
+    - '1'
+    - 
+    - '2014-04-28 09:56:49.946171'
+    - '2014-04-28 09:56:49.946171'
+    - false
+    - 
+    - 
+  - - '12'
+    - distr2
+    - ''
+    - 
+    - '1'
+    - 
+    - '2014-04-28 10:17:40.589218'
+    - '2014-04-28 10:17:40.589218'
+    - false
+    - 
+    - 
+  - - '13'
+    - Дистр пишет сообщение
+    - Сообщение!
+    - 
+    - '3'
+    - 
+    - '2014-04-28 10:49:56.93545'
+    - '2014-04-29 10:22:36.946453'
+    - true
+    - 
+    - 
+  - - '14'
+    - asdfgfds
+    - sdsdfsdfsdf
+    - 
+    - '1'
+    - 
+    - '2014-04-28 16:25:44.876798'
+    - '2014-04-28 16:25:44.876798'
+    - false
+    - 
+    - 
+  - - '15'
+    - 'Re: Дистр пишет сообщение'
+    - а логист отвечает
+    - 
+    - '1'
+    - 
+    - '2014-04-28 18:17:40.926636'
+    - '2014-04-28 18:17:40.926636'
+    - false
+    - 
+    - 
+  - - '16'
+    - 'Re: any text'
+    - ффффф
+    - 
+    - '1'
+    - 
+    - '2014-04-28 18:19:35.535898'
+    - '2014-04-28 18:19:35.535898'
+    - false
+    - 
+    - 
+  - - '17'
+    - 'Re: Re: any text'
+    - всё понял
+    - 
+    - '3'
+    - 
+    - '2014-04-29 08:37:43.23475'
+    - '2014-04-29 08:37:43.23475'
+    - false
+    - 
+    - 
+  - - '18'
+    - здорово!
+    - ''
+    - 
+    - '1'
+    - 
+    - '2014-04-29 10:15:58.408378'
+    - '2014-04-29 10:15:58.408378'
+    - false
+    - 
+    - 
+  - - '19'
+    - 'Re: здорово!'
+    - и вам не хворать
+    - 
+    - '2'
+    - 
+    - '2014-04-29 10:24:49.303084'
+    - '2014-04-29 10:24:49.303084'
+    - false
+    - 
+    - 
+  - - '20'
+    - 'Re: Важное сообщение'
+    - ''
+    - 
+    - '3'
+    - 
+    - '2014-04-29 11:36:46.454617'
+    - '2014-04-29 11:36:46.454617'
+    - false
+    - 
+    - 
+  - - '21'
+    - 'Re: Re: any text'
+    - ''
+    - 
+    - '3'
+    - 
+    - '2014-04-29 12:19:30.223688'
+    - '2014-04-29 12:19:30.223688'
+    - false
+    - 
+    - 
+  - - '22'
+    - 'Re: Re: Re: any text'
+    - ''
+    - 
+    - '1'
+    - 
+    - '2014-04-29 12:20:20.27908'
+    - '2014-04-29 12:20:20.27908'
+    - false
+    - 
+    - 
+  - - '23'
+    - 'Re: any text'
+    - ''
+    - 
+    - '1'
+    - 
+    - '2014-04-29 12:24:48.492326'
+    - '2014-04-29 12:24:48.492326'
+    - false
+    - 
+    - 
+
+---
+order_items:
+  columns:
+  - id
+  - order_id
+  - nomenclature_id
+  - partner_number
+  - quantity
+  - price
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - '1'
+    - '123456'
+    - '45'
+    - '143.00'
+    - '2014-04-09 13:56:40.69298'
+    - '2014-04-09 13:56:40.69298'
+  - - '2'
+    - '2'
+    - '2'
+    - '153234'
+    - '15'
+    - '153.00'
+    - '2014-04-09 13:57:01.394317'
+    - '2014-04-09 17:07:20.058833'
+  - - '3'
+    - '2'
+    - '1'
+    - '123456'
+    - '44'
+    - '111.00'
+    - '2014-04-09 13:57:01.398919'
+    - '2014-04-09 13:57:01.398919'
+  - - '4'
+    - '3'
+    - '2'
+    - '153234'
+    - '8'
+    - '135.00'
+    - '2014-04-09 14:10:19.901953'
+    - '2014-04-09 14:10:19.901953'
+  - - '5'
+    - '4'
+    - '1'
+    - '123456'
+    - '12'
+    - '111.00'
+    - '2014-04-09 16:59:53.187042'
+    - '2014-04-09 16:59:53.187042'
+  - - '6'
+    - '5'
+    - '1'
+    - '123456'
+    - '23'
+    - '143.00'
+    - '2014-04-11 11:26:14.324786'
+    - '2014-04-11 11:26:14.324786'
+  - - '7'
+    - '6'
+    - '2'
+    - '153234'
+    - '5'
+    - '135.00'
+    - '2014-04-11 11:26:28.280054'
+    - '2014-04-11 11:26:28.280054'
+  - - '8'
+    - '7'
+    - '1'
+    - '123456'
+    - '5'
+    - '111.00'
+    - '2014-04-11 11:26:42.745884'
+    - '2014-04-11 11:26:42.745884'
+  - - '9'
+    - '8'
+    - '1'
+    - '123456'
+    - '3'
+    - '111.00'
+    - '2014-04-11 11:26:56.512055'
+    - '2014-04-11 11:26:56.512055'
+  - - '10'
+    - '9'
+    - '1'
+    - '123456'
+    - '4'
+    - '111.00'
+    - '2014-04-11 11:27:10.156166'
+    - '2014-04-11 11:27:10.156166'
+  - - '11'
+    - '10'
+    - '2'
+    - '153234'
+    - '2'
+    - '135.00'
+    - '2014-04-11 11:27:24.275583'
+    - '2014-04-11 11:27:24.275583'
+  - - '12'
+    - '11'
+    - '2'
+    - '153234'
+    - '4'
+    - '135.00'
+    - '2014-04-11 11:27:42.562921'
+    - '2014-04-11 11:27:42.562921'
+  - - '13'
+    - '11'
+    - '1'
+    - '123456'
+    - '5'
+    - '143.00'
+    - '2014-04-11 11:27:42.567736'
+    - '2014-04-11 11:27:42.567736'
+  - - '14'
+    - '12'
+    - '1'
+    - '123456'
+    - '56'
+    - '111.00'
+    - '2014-04-11 11:30:37.064475'
+    - '2014-04-11 11:30:37.064475'
+  - - '15'
+    - '12'
+    - '2'
+    - '153234'
+    - '45'
+    - '153.00'
+    - '2014-04-17 20:03:10.87584'
+    - '2014-04-17 20:03:10.87584'
+  - - '16'
+    - '11'
+    - '3'
+    - '1111111'
+    - '6'
+    - '123.00'
+    - '2014-04-18 12:48:30.501818'
+    - '2014-04-22 13:59:16.005584'
+  - - '18'
+    - '13'
+    - '2'
+    - '153234'
+    - '5'
+    - '135.00'
+    - '2014-04-24 10:08:32.384837'
+    - '2014-04-24 10:08:32.384837'
+  - - '19'
+    - '14'
+    - '1'
+    - '123456'
+    - '145'
+    - '111.00'
+    - '2014-04-24 10:43:57.5662'
+    - '2014-04-24 10:43:57.5662'
+  - - '20'
+    - '15'
+    - '1'
+    - '123456'
+    - '234'
+    - '111.00'
+    - '2014-04-24 10:46:50.560032'
+    - '2014-04-24 10:55:01.916208'
+  - - '21'
+    - '14'
+    - '2'
+    - '153234'
+    - '8'
+    - '153.00'
+    - '2014-04-24 11:16:39.365322'
+    - '2014-04-24 11:41:20.255947'
+  - - '22'
+    - '16'
+    - '2'
+    - '153234'
+    - '5'
+    - '135.00'
+    - '2014-04-24 16:52:08.186586'
+    - '2014-04-24 16:52:08.186586'
+  - - '23'
+    - '17'
+    - '2'
+    - '153234'
+    - '12'
+    - '135.00'
+    - '2014-04-24 19:06:14.728191'
+    - '2014-04-24 19:06:14.728191'
+  - - '24'
+    - '18'
+    - '2'
+    - '153234'
+    - '12'
+    - '135.00'
+    - '2014-04-24 19:07:18.591925'
+    - '2014-04-24 19:07:18.591925'
+  - - '25'
+    - '20'
+    - '2'
+    - '153234'
+    - '54'
+    - '135.00'
+    - '2014-04-26 20:13:34.497592'
+    - '2014-04-26 20:13:34.497592'
+  - - '28'
+    - '22'
+    - '2'
+    - '153234'
+    - '3'
+    - '153.00'
+    - '2014-04-26 20:20:56.446992'
+    - '2014-04-28 16:18:08.186692'
+  - - '30'
+    - '23'
+    - '2'
+    - '153234'
+    - '13'
+    - '130.00'
+    - '2014-04-26 20:35:13.224291'
+    - '2014-05-14 07:09:02.521561'
+  - - '31'
+    - '25'
+    - '2'
+    - '153234'
+    - '56'
+    - '135.00'
+    - '2014-05-10 12:27:53.450421'
+    - '2014-05-10 12:27:53.450421'
+  - - '32'
+    - '26'
+    - '2'
+    - '153234'
+    - '1'
+    - '135.00'
+    - '2014-05-15 05:34:33.787293'
+    - '2014-05-15 05:34:33.787293'
+  - - '33'
+    - '26'
+    - '1'
+    - '123456'
+    - '5'
+    - '143.00'
+    - '2014-05-15 05:34:34.151854'
+    - '2014-05-15 05:34:34.151854'
+  - - '34'
+    - '27'
+    - '1'
+    - '123456'
+    - '1'
+    - '143.00'
+    - '2014-05-29 12:54:50.618755'
+    - '2014-05-29 12:54:50.618755'
+  - - '35'
+    - '27'
+    - '2'
+    - '153234'
+    - '3'
+    - '135.00'
+    - '2014-05-29 12:54:50.63174'
+    - '2014-05-29 12:54:50.63174'
+  - - '36'
+    - '28'
+    - '2'
+    - '153234'
+    - '3'
+    - '135.00'
+    - '2014-07-03 09:18:31.055322'
+    - '2014-07-03 09:18:31.055322'
+  - - '37'
+    - '19'
+    - '1'
+    - '123456'
+    - '8'
+    - '143.00'
+    - '2015-01-22 16:58:22.325304'
+    - '2015-01-22 16:58:22.325304'
+  - - '38'
+    - '29'
+    - '2'
+    - '153234'
+    - '2'
+    - '135.00'
+    - '2015-03-20 08:08:26.520619'
+    - '2015-06-23 21:17:14.46798'
+  - - '39'
+    - '30'
+    - '2'
+    - '153234'
+    - '1'
+    - '135.00'
+    - '2015-06-22 12:46:12.548623'
+    - '2015-06-22 12:46:12.548623'
+  - - '41'
+    - '31'
+    - '1'
+    - D3504
+    - '2'
+    - '120.00'
+    - '2015-07-17 09:16:12.627378'
+    - '2015-07-17 09:16:12.627378'
+  - - '42'
+    - '31'
+    - '2'
+    - S1095
+    - '1'
+    - '180.00'
+    - '2015-07-17 09:16:12.652208'
+    - '2015-07-17 09:16:12.652208'
+
+---
+document_types:
+  columns:
+  - id
+  - name
+  - distr
+  - created_at
+  - updated_at
+  - deleted_at
+  - tab
+  records: 
+  - - '1'
+    - Счёт
+    - false
+    - '2014-04-09 14:15:12.414785'
+    - '2014-04-17 17:25:44.995657'
+    - 
+    - '1'
+  - - '2'
+    - Накладная
+    - false
+    - '2014-04-09 14:15:33.363561'
+    - '2014-04-17 17:25:59.875285'
+    - 
+    - '2'
+  - - '3'
+    - Счёт-фактура
+    - false
+    - '2014-04-09 14:15:43.421205'
+    - '2014-04-17 17:26:07.057383'
+    - 
+    - '2'
+  - - '4'
+    - Платёжное поручение
+    - true
+    - '2014-04-09 14:16:05.022716'
+    - '2014-04-17 17:03:42.761975'
+    - 
+    - '1'
+
+---
+documents:
+  columns:
+  - id
+  - file
+  - order_id
+  - created_at
+  - updated_at
+  - document_type_id
+  - user_id
+  - doc_date
+  - doc_no
+  - memo
+  - summa
+  records: 
+  - - '1'
+    - 2_Платёжное поручение_20150717122701.jpg
+    - '2'
+    - '2014-04-09 17:07:42.948511'
+    - '2015-07-17 09:27:01.169425'
+    - '4'
+    - '1'
+    - '2014-02-04'
+    - '7'
+    - ''
+    - 
+  - - '2'
+    - 2_Накладная_20150717122751.jpg
+    - '2'
+    - '2014-04-09 18:54:15.25308'
+    - '2015-07-17 09:27:51.486035'
+    - '2'
+    - '1'
+    - 
+    - '111'
+    - ''
+    - 
+  - - '3'
+    - 12_Платёжное поручение_20150717122654.jpg
+    - '12'
+    - '2014-04-17 14:48:28.232124'
+    - '2015-07-17 09:26:54.508893'
+    - '4'
+    - '1'
+    - '2014-04-24'
+    - '123'
+    - такой длииииннный длинный комментарий
+    - 
+  - - '4'
+    - 11_Счёт_20150717122646.jpg
+    - '11'
+    - '2014-04-21 19:33:22.629266'
+    - '2015-07-17 09:26:46.918178'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '5'
+    - 11_Платёжное поручение_20150717122632.jpg
+    - '11'
+    - '2014-04-21 20:44:41.381093'
+    - '2015-07-17 09:26:32.44181'
+    - '4'
+    - '3'
+    - '2014-04-17'
+    - '665'
+    - ''
+    - 
+  - - '6'
+    - 12_Платёжное поручение_20150717122618.jpg
+    - '12'
+    - '2014-04-21 21:25:19.665455'
+    - '2015-07-17 09:26:18.632763'
+    - '4'
+    - '1'
+    - 
+    - '23'
+    - asd123
+    - 
+  - - '7'
+    - 12_Накладная_20150717122744.jpg
+    - '12'
+    - '2014-04-21 21:57:40.090285'
+    - '2015-07-17 09:27:44.404823'
+    - '2'
+    - '1'
+    - '2014-04-24'
+    - '12'
+    - ''
+    - 
+  - - '9'
+    - 12_Счёт_20150717122606.pdf
+    - '12'
+    - '2014-04-22 06:50:11.184455'
+    - '2015-07-17 09:26:06.084196'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - pdf
+    - 
+  - - '10'
+    - 12_Счёт_20150717122435.xls
+    - '12'
+    - '2014-04-22 06:54:58.230658'
+    - '2015-07-17 09:24:35.823929'
+    - '1'
+    - '1'
+    - '2014-04-22'
+    - '654'
+    - xls
+    - 
+  - - '11'
+    - 9_Счёт_20150717122353.jpg
+    - '9'
+    - '2014-04-22 08:32:22.79359'
+    - '2015-07-17 09:23:53.456291'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '12'
+    - 2_Платёжное поручение_20150717122346.jpg
+    - '2'
+    - '2014-04-22 08:41:22.645745'
+    - '2015-07-17 09:23:46.11546'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '13'
+    - 2_Счёт_20150717122338.jpg
+    - '2'
+    - '2014-04-22 08:41:31.183975'
+    - '2015-07-17 09:23:38.345752'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '14'
+    - 5_Счёт_20150717122330.jpg
+    - '5'
+    - '2014-04-22 08:42:02.900475'
+    - '2015-07-17 09:23:30.811677'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '15'
+    - 5_Платёжное поручение_20150717122307.jpg
+    - '5'
+    - '2014-04-22 08:43:03.02111'
+    - '2015-07-17 09:23:07.167212'
+    - '4'
+    - '1'
+    - '2014-04-22'
+    - '143'
+    - ''
+    - 
+  - - '16'
+    - 5_Платёжное поручение_20150717122255.jpg
+    - '5'
+    - '2014-04-22 09:55:10.108816'
+    - '2015-07-17 09:22:55.568388'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - без расширения
+    - 
+  - - '17'
+    - 5_Платёжное поручение_20150717122246.jpg
+    - '5'
+    - '2014-04-22 11:58:29.318684'
+    - '2015-07-17 09:22:46.589026'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - '567.00'
+  - - '18'
+    - 2_Платёжное поручение_20150717122240.jpg
+    - '2'
+    - '2014-04-24 08:39:03.360543'
+    - '2015-07-17 09:22:40.652165'
+    - '4'
+    - '1'
+    - '2014-04-23'
+    - '114'
+    - ''
+    - '153.53'
+  - - '20'
+    - 15_Накладная_20150717122740.jpg
+    - '15'
+    - '2014-04-24 11:05:05.486763'
+    - '2015-07-17 09:27:40.255839'
+    - '2'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '21'
+    - 15_Накладная_20150717122728.jpg
+    - '15'
+    - '2014-04-24 11:06:28.537494'
+    - '2015-07-17 09:27:28.239476'
+    - '2'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '22'
+    - 15_Платёжное поручение_20150717122228.jpg
+    - '15'
+    - '2014-04-24 11:07:05.278705'
+    - '2015-07-17 09:22:28.64461'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '23'
+    - 14_Платёжное поручение_20150717122218.jpg
+    - '14'
+    - '2014-04-24 11:17:56.092516'
+    - '2015-07-17 09:22:18.515718'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - '1234.00'
+  - - '24'
+    - 14_Счёт_20150717122211.jpg
+    - '14'
+    - '2014-04-24 11:33:34.086817'
+    - '2015-07-17 09:22:11.881044'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - '1123.00'
+  - - '25'
+    - 14_Счёт_20150717122154.jpg
+    - '14'
+    - '2014-04-24 11:42:36.306011'
+    - '2015-07-17 09:21:54.602523'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '26'
+    - 14_Накладная_20150717122723.pdf
+    - '14'
+    - '2014-04-24 12:08:21.657034'
+    - '2015-07-17 09:27:23.789088'
+    - '2'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '27'
+    - 14_Счёт-фактура_20150717122718.jpg
+    - '14'
+    - '2014-04-24 12:10:10.582163'
+    - '2015-07-17 09:27:18.183835'
+    - '3'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '28'
+    - 14_Накладная_20150717122713.jpg
+    - '14'
+    - '2014-04-24 12:10:47.415912'
+    - '2015-07-17 09:27:13.607702'
+    - '2'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '29'
+    - 14_Платёжное поручение_20150717122135.jpg
+    - '14'
+    - '2014-04-24 12:11:46.534809'
+    - '2015-07-17 09:21:35.008191'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - '65423.00'
+  - - '30'
+    - 14_Платёжное поручение_20150717122127.jpg
+    - '14'
+    - '2014-04-24 14:04:45.488203'
+    - '2015-07-17 09:21:27.104683'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '31'
+    - 14_Платёжное поручение_20150717122117.jpg
+    - '14'
+    - '2014-04-24 14:04:54.528972'
+    - '2015-07-17 09:21:17.820736'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '32'
+    - 14_Платёжное поручение_20150717122107.jpg
+    - '14'
+    - '2014-04-24 14:05:02.633518'
+    - '2015-07-17 09:21:07.597904'
+    - '4'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '33'
+    - 14_Счёт_20150717122028.jpg
+    - '14'
+    - '2014-04-24 14:05:11.555385'
+    - '2015-07-17 09:20:28.157996'
+    - '1'
+    - '1'
+    - 
+    - ''
+    - ''
+    - 
+  - - '34'
+    - 14_Платёжное поручение_20150717122019.jpg
+    - '14'
+    - '2014-04-24 14:38:55.332213'
+    - '2015-07-17 09:20:19.842469'
+    - '4'
+    - '4'
+    - '2014-04-23'
+    - '12'
+    - 'sdas fasdfasd adsfasdfasdfas asdfasdfasd adfasdfasd asdfasdfas asdfasdfasd
+      afasdf adfasdfa '
+    - '123456.00'
+  - - '35'
+    - 25_Платёжное поручение_20150717121947.jpg
+    - '25'
+    - '2014-05-10 12:31:21.658014'
+    - '2015-07-17 09:19:47.686928'
+    - '4'
+    - '1'
+    - '2014-05-16'
+    - '456'
+    - ''
+    - '123000.00'
+
+---
+roles:
+  columns:
+  - id
+  - name
+  - resource_id
+  - resource_type
+  - created_at
+  - updated_at
+  - deleted_at
+  records: 
+  - - '1'
+    - admin
+    - 
+    - 
+    - '2014-04-09 13:48:03.053337'
+    - '2014-04-09 13:48:03.053337'
+    - 
+  - - '2'
+    - logist
+    - 
+    - 
+    - '2014-04-09 13:48:03.246143'
+    - '2014-04-09 13:48:03.246143'
+    - 
+  - - '3'
+    - distributor
+    - 
+    - 
+    - '2014-04-09 13:48:03.267294'
+    - '2014-04-09 13:48:03.267294'
+    - 
+  - - '4'
+    - logist_prime
+    - 
+    - 
+    - '2014-05-29 12:50:19.158104'
+    - '2014-05-29 12:50:19.158104'
+    - 
+
+---
+orders:
+  columns:
+  - id
+  - distributor_id
+  - user_id
+  - memo
+  - created_at
+  - updated_at
+  - deleted_at
+  - state
+  - docs
+  records: 
+  - - '1'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-09 13:56:40.686187'
+    - '2014-04-09 14:17:55.226658'
+    - 
+    - accepted
+    - false
+  - - '2'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-09 13:57:01.389935'
+    - '2015-07-17 09:27:51.488237'
+    - 
+    - pending
+    - false
+  - - '3'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-09 14:10:19.888441'
+    - '2014-04-09 14:10:19.907118'
+    - 
+    - pending
+    - false
+  - - '4'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-09 16:59:53.158866'
+    - '2014-04-09 17:00:34.554533'
+    - 
+    - paid
+    - false
+  - - '5'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-11 11:26:14.29605'
+    - '2015-07-17 09:23:30.817161'
+    - 
+    - pending
+    - false
+  - - '6'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-11 11:26:28.27575'
+    - '2014-04-11 11:26:28.283268'
+    - 
+    - pending
+    - false
+  - - '7'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-11 11:26:42.741411'
+    - '2014-04-11 11:26:42.749088'
+    - 
+    - pending
+    - false
+  - - '8'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-11 11:26:56.507638'
+    - '2014-04-11 11:26:56.515231'
+    - 
+    - pending
+    - false
+  - - '9'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-11 11:27:10.15189'
+    - '2015-07-17 09:23:53.459011'
+    - 
+    - shipped
+    - false
+  - - '10'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-11 11:27:24.271147'
+    - '2014-04-22 14:10:15.11334'
+    - 
+    - pending
+    - false
+  - - '11'
+    - '1'
+    - '1'
+    - '111'
+    - '2014-04-11 11:27:42.558567'
+    - '2015-07-17 09:26:46.920384'
+    - 
+    - pending
+    - false
+  - - '12'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-11 11:30:37.059964'
+    - '2015-07-17 09:27:44.406819'
+    - 
+    - accepted
+    - false
+  - - '13'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-24 10:08:32.097464'
+    - '2014-04-24 10:08:32.586013'
+    - 
+    - pending
+    - false
+  - - '14'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-24 10:43:57.554132'
+    - '2015-07-17 09:27:23.791822'
+    - 
+    - pending
+    - false
+  - - '15'
+    - '2'
+    - '1'
+    - ''
+    - '2014-04-24 10:46:50.547603'
+    - '2015-07-17 09:27:40.257986'
+    - 
+    - pending
+    - false
+  - - '16'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-24 16:52:08.174478'
+    - '2014-04-24 16:52:08.191387'
+    - 
+    - pending
+    - false
+  - - '17'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-24 19:06:14.716014'
+    - '2014-05-29 13:07:28.589963'
+    - 
+    - accepted
+    - false
+  - - '18'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-24 19:07:18.587567'
+    - '2014-05-29 15:20:18.980564'
+    - 
+    - accepted
+    - false
+  - - '19'
+    - '1'
+    - '2'
+    - рварвапап
+    - '2014-04-26 19:44:54.164685'
+    - '2015-01-22 16:58:22.337862'
+    - 
+    - pending
+    - false
+  - - '20'
+    - '1'
+    - '2'
+    - ''
+    - '2014-04-26 20:13:34.493084'
+    - '2014-04-26 20:13:34.55663'
+    - 
+    - pending
+    - false
+  - - '21'
+    - '2'
+    - '2'
+    - ''
+    - '2014-04-26 20:19:13.935148'
+    - '2014-04-26 20:20:45.191404'
+    - '2014-04-26 20:20:45.191404'
+    - pending
+    - false
+  - - '22'
+    - '2'
+    - '2'
+    - ''
+    - '2014-04-26 20:20:56.442023'
+    - '2014-04-28 16:18:08.191219'
+    - 
+    - pending
+    - false
+  - - '23'
+    - '1'
+    - '2'
+    - ''
+    - '2014-04-26 20:35:13.219222'
+    - '2014-05-14 07:09:02.531386'
+    - 
+    - pending
+    - false
+  - - '24'
+    - '1'
+    - '1'
+    - ''
+    - '2014-04-28 17:03:15.981909'
+    - '2014-04-28 17:03:28.380381'
+    - '2014-04-28 17:03:28.380381'
+    - pending
+    - false
+  - - '25'
+    - '1'
+    - '1'
+    - ''
+    - '2014-05-10 12:27:53.381737'
+    - '2015-07-17 09:19:47.690222'
+    - 
+    - accepted
+    - false
+  - - '26'
+    - '1'
+    - '1'
+    - ''
+    - '2014-05-15 05:34:33.728187'
+    - '2014-05-29 13:06:40.43866'
+    - 
+    - accepted
+    - false
+  - - '27'
+    - '1'
+    - '1'
+    - ''
+    - '2014-05-29 12:54:50.564843'
+    - '2015-01-22 17:41:05.042897'
+    - 
+    - accepted
+    - true
+  - - '28'
+    - '1'
+    - '1'
+    - ''
+    - '2014-07-03 09:18:30.880883'
+    - '2015-01-22 17:34:55.06341'
+    - 
+    - pending
+    - true
+  - - '29'
+    - '1'
+    - '3'
+    - ''
+    - '2015-03-20 08:08:26.477212'
+    - '2015-06-23 21:17:14.475658'
+    - 
+    - pending
+    - false
+  - - '30'
+    - '1'
+    - '1'
+    - ''
+    - '2015-06-22 12:46:12.513647'
+    - '2015-06-22 12:46:21.004811'
+    - 
+    - accepted
+    - false
+  - - '31'
+    - '1'
+    - '1'
+    - ''
+    - '2015-07-16 13:40:43.518931'
+    - '2015-07-17 09:16:12.656369'
+    - 
+    - pending
+    - false
+
+---
+distributors:
+  columns:
+  - id
+  - name
+  - user_id
+  - created_at
+  - updated_at
+  - deleted_at
+  records: 
+  - - '1'
+    - Юнитед Стейтс Оф Америка Кэпитал унд Цванцих
+    - '3'
+    - '2014-04-09 13:55:16.641672'
+    - '2015-07-17 08:51:26.279615'
+    - 
+  - - '2'
+    - Comfortable Compounds
+    - '4'
+    - '2014-04-09 13:55:29.911797'
+    - '2015-07-17 08:52:22.469875'
+    - 
+
+---
+comfy_cms_sites:
+  columns:
+  - id
+  - label
+  - identifier
+  - hostname
+  - path
+  - locale
+  - is_mirrored
+  records: 
+  - - '1'
+    - Site
+    - site
+    - 127.0.0.1:3000
+    - ''
+    - ru
+    - false
+
+---
+comfy_cms_pages:
+  columns:
+  - id
+  - site_id
+  - layout_id
+  - parent_id
+  - target_page_id
+  - label
+  - slug
+  - full_path
+  - content_cache
+  - position
+  - children_count
+  - is_published
+  - is_shared
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - '1'
+    - 
+    - 
+    - Главная
+    - 
+    - "/"
+    - "<div class=\"row border-bottom\">\r\n  <div class=\"large-12 columns banner\">\r\n
+      \   <h1 class=\"text-center\">\r\n  Lorem Ipsum\r\n</h1>\r\n<p class=\"text-center\">\r\n
+      \ О, сколько нам открытий чудных\r\n</p>\r\n<p class=\"text-center\">\r\n  Готовит
+      просвещенья дух...\r\n</p>\r\n<p>\r\n  Логин: admin@example.com\r\n</p>\r\n<p>\r\n
+      \ Пароль: password\r\n</p>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n
+      \ <div class=\"large-4 columns\">\r\n    <h4 style=\"text-align: center;\"></h4><h1>Lorem
+      ipsum<br>\r\n</h1><p>\r\n\tLorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Nam non suscipit augue. Nulla facilisi. Integer faucibus gravida facilisis.
+      In luctus nec nunc vitae tincidunt. Nam in massa ex. Cum sociis natoque penatibus
+      et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.
+      Sed maximus, felis at commodo pharetra, elit metus mattis leo, quis maximus
+      lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis placerat augue tempor congue.
+      Quisque quis hendrerit eros, vel vulputate justo. Donec condimentum arcu vitae
+      leo mollis, eu fringilla odio bibendum. Curabitur iaculis fringilla iaculis.
+      Etiam egestas odio non felis suscipit, vel interdum nunc consequat. Donec pellentesque
+      maximus diam id pellentesque. Nulla non lobortis quam, a vulputate augue. Donec
+      metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper condimentum
+      velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non risus
+      ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>\r\n  </div>\r\n  <div
+      class=\"large-4 columns\">\r\n    <h4 style=\"text-align: center;\"></h4><h1>Lorem
+      ipsum<br>\r\n</h1><p>\r\n\tLorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Nam non suscipit augue. Nulla facilisi. Integer faucibus gravida facilisis.
+      In luctus nec nunc vitae tincidunt. Nam in massa ex. Cum sociis natoque penatibus
+      et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.
+      Sed maximus, felis at commodo pharetra, elit metus mattis leo, quis maximus
+      lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis placerat augue tempor congue.
+      Quisque quis hendrerit eros, vel vulputate justo. Donec condimentum arcu vitae
+      leo mollis, eu fringilla odio bibendum. Curabitur iaculis fringilla iaculis.
+      Etiam egestas odio non felis suscipit, vel interdum nunc consequat. Donec pellentesque
+      maximus diam id pellentesque. Nulla non lobortis quam, a vulputate augue. Donec
+      metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper condimentum
+      velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non risus
+      ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>\r\n  </div>\r\n  <div
+      class=\"large-4 columns\">\r\n    <h4 style=\"text-align: center;\"></h4><h1>Lorem
+      ipsum<br>\r\n</h1><p>\r\n\tLorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Nam non suscipit augue. Nulla facilisi. Integer faucibus gravida facilisis.
+      In luctus nec nunc vitae tincidunt. Nam in massa ex. Cum sociis natoque penatibus
+      et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.
+      Sed maximus, felis at commodo pharetra, elit metus mattis leo, quis maximus
+      lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis placerat augue tempor congue.
+      Quisque quis hendrerit eros, vel vulputate justo. Donec condimentum arcu vitae
+      leo mollis, eu fringilla odio bibendum. Curabitur iaculis fringilla iaculis.
+      Etiam egestas odio non felis suscipit, vel interdum nunc consequat. Donec pellentesque
+      maximus diam id pellentesque. Nulla non lobortis quam, a vulputate augue. Donec
+      metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper condimentum
+      velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non risus
+      ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>\r\n  </div>\r\n</div>\r\n<div
+      class=\"row\">\r\n  <div class=\"large-6 columns\">\r\n    <p>Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit. Nam non suscipit augue. Nulla facilisi.
+      Integer faucibus gravida facilisis. In luctus nec nunc vitae tincidunt. Nam
+      in massa ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo pharetra,
+      elit metus mattis leo, quis maximus lorem magna in risus.</p><p>Sed facilisis
+      placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+      Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur
+      iaculis fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum
+      nunc consequat. Donec pellentesque maximus diam id pellentesque. Nulla non lobortis
+      quam, a vulputate augue. Donec metus sapien, congue ut tellus et, blandit egestas
+      leo. Vivamus semper condimentum velit, at congue lorem porta sed. Vestibulum
+      massa metus, pharetra non risus ac, efficitur venenatis diam.</p><p>Vestibulum
+      mattis vel augue sed mattis. Integer lorem lorem, ornare ac ullamcorper at,
+      sollicitudin suscipit eros. Donec ut tellus erat. Vestibulum ante ipsum primis
+      in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris congue ac
+      leo sed volutpat. Aenean sodales urna a magna dapibus, vestibulum ullamcorper
+      libero ullamcorper. Nulla ipsum tellus, lacinia quis blandit a, blandit et est.
+      Aenean dapibus ultrices facilisis. Ut efficitur molestie lorem nec cursus. Sed
+      commodo nisi eget hendrerit facilisis. Aenean condimentum laoreet nulla, ut
+      ultricies erat feugiat sed. Suspendisse quis semper magna. Curabitur vel nisl
+      iaculis, cursus ipsum et, congue dolor. Duis id rhoncus tortor, vel blandit
+      nibh. Ut aliquet, est a condimentum laoreet, nibh leo imperdiet mauris, dictum
+      semper metus magna et risus. Praesent ultricies tellus magna.</p>\r\n  </div>\r\n
+      \ <div class=\"large-6 columns\">\r\n    <p>Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Nam non suscipit augue. Nulla facilisi. Integer faucibus gravida
+      facilisis. In luctus nec nunc vitae tincidunt. Nam in massa ex. Cum sociis natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse
+      potenti. Sed maximus, felis at commodo pharetra, elit metus mattis leo, quis
+      maximus lorem magna in risus.</p><p>Sed facilisis placerat augue tempor congue.
+      Quisque quis hendrerit eros, vel vulputate justo. Donec condimentum arcu vitae
+      leo mollis, eu fringilla odio bibendum. Curabitur iaculis fringilla iaculis.
+      Etiam egestas odio non felis suscipit, vel interdum nunc consequat. Donec pellentesque
+      maximus diam id pellentesque. Nulla non lobortis quam, a vulputate augue. Donec
+      metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper condimentum
+      velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non risus
+      ac, efficitur venenatis diam.</p><p>Vestibulum mattis vel augue sed mattis.
+      Integer lorem lorem, ornare ac ullamcorper at, sollicitudin suscipit eros. Donec
+      ut tellus erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+      posuere cubilia Curae; Mauris congue ac leo sed volutpat. Aenean sodales urna
+      a magna dapibus, vestibulum ullamcorper libero ullamcorper. Nulla ipsum tellus,
+      lacinia quis blandit a, blandit et est. Aenean dapibus ultrices facilisis. Ut
+      efficitur molestie lorem nec cursus. Sed commodo nisi eget hendrerit facilisis.
+      Aenean condimentum laoreet nulla, ut ultricies erat feugiat sed. Suspendisse
+      quis semper magna. Curabitur vel nisl iaculis, cursus ipsum et, congue dolor.
+      Duis id rhoncus tortor, vel blandit nibh. Ut aliquet, est a condimentum laoreet,
+      nibh leo imperdiet mauris, dictum semper metus magna et risus. Praesent ultricies
+      tellus magna.</p>\r\n  </div>\r\n</div>\r\n<footer>\r\n  <hr>\r\n  <div class=\"row\">\r\n
+      \ <div class=\"large-6 columns\">\r\n    © Copyright. 2014. ООО \"Открытья чудные\"\r\n
+      \ </div>\r\n  <div class=\"large-6 columns\">\r\n    <%= render :partial =>
+      'home/footernav' %>\r\n  </div>\r\n</div>\r\n\r\n</footer>"
+    - '0'
+    - '1'
+    - true
+    - false
+    - '2015-07-16 09:46:17.974036'
+    - '2015-07-17 08:42:23.915932'
+  - - '2'
+    - '1'
+    - '2'
+    - '1'
+    - 
+    - Контакты
+    - contacts
+    - "/contacts"
+    - "<br /><br /><br />\r\n<h3 style=\"text-align: center;\">Контакты:</h3><h4 style=\"text-align:
+      center;\">123000 г. Москва, Московский тупик, д.3, стр.2, оф.1</h4>"
+    - '0'
+    - '0'
+    - true
+    - false
+    - '2015-07-16 11:18:38.324918'
+    - '2015-07-17 08:34:14.328148'
+
+---
+comfy_cms_blocks:
+  columns:
+  - id
+  - identifier
+  - content
+  - blockable_id
+  - blockable_type
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - content
+    - '--- "<p>Content</p>"
+
+'
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 09:46:17.976018'
+    - '2015-07-16 09:46:17.976018'
+  - - '2'
+    - column1
+    - |
+      --- "<h4 style=\"text-align: center;\"></h4><h1>Lorem ipsum<br>\r\n</h1><p>\r\n\tLorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nam non suscipit augue. Nulla
+        facilisi. Integer faucibus gravida facilisis. In luctus nec nunc vitae tincidunt.
+        Nam in massa ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo pharetra, elit
+        metus mattis leo, quis maximus lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis
+        placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+        Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur iaculis
+        fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum nunc consequat.
+        Donec pellentesque maximus diam id pellentesque. Nulla non lobortis quam, a vulputate
+        augue. Donec metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper
+        condimentum velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non
+        risus ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 10:52:51.715602'
+    - '2015-07-17 08:33:08.807432'
+  - - '3'
+    - column2
+    - |
+      --- "<h4 style=\"text-align: center;\"></h4><h1>Lorem ipsum<br>\r\n</h1><p>\r\n\tLorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nam non suscipit augue. Nulla
+        facilisi. Integer faucibus gravida facilisis. In luctus nec nunc vitae tincidunt.
+        Nam in massa ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo pharetra, elit
+        metus mattis leo, quis maximus lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis
+        placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+        Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur iaculis
+        fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum nunc consequat.
+        Donec pellentesque maximus diam id pellentesque. Nulla non lobortis quam, a vulputate
+        augue. Donec metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper
+        condimentum velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non
+        risus ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 11:01:03.68146'
+    - '2015-07-17 08:33:08.830798'
+  - - '4'
+    - column3
+    - |
+      --- "<h4 style=\"text-align: center;\"></h4><h1>Lorem ipsum<br>\r\n</h1><p>\r\n\tLorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nam non suscipit augue. Nulla
+        facilisi. Integer faucibus gravida facilisis. In luctus nec nunc vitae tincidunt.
+        Nam in massa ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo pharetra, elit
+        metus mattis leo, quis maximus lorem magna in risus.\r\n</p><p>\r\n\tSed facilisis
+        placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+        Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur iaculis
+        fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum nunc consequat.
+        Donec pellentesque maximus diam id pellentesque. Nulla non lobortis quam, a vulputate
+        augue. Donec metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper
+        condimentum velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non
+        risus ac, efficitur venenatis diam.\r\n</p><p>\r\n\t<br>\r\n</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 11:01:03.683203'
+    - '2015-07-17 08:33:08.805668'
+  - - '5'
+    - column4
+    - |
+      --- "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non suscipit
+        augue. Nulla facilisi. Integer faucibus gravida facilisis. In luctus nec nunc vitae
+        tincidunt. Nam in massa ex. Cum sociis natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo
+        pharetra, elit metus mattis leo, quis maximus lorem magna in risus.</p><p>Sed facilisis
+        placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+        Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur iaculis
+        fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum nunc consequat.
+        Donec pellentesque maximus diam id pellentesque. Nulla non lobortis quam, a vulputate
+        augue. Donec metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper
+        condimentum velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non
+        risus ac, efficitur venenatis diam.</p><p>Vestibulum mattis vel augue sed mattis.
+        Integer lorem lorem, ornare ac ullamcorper at, sollicitudin suscipit eros. Donec
+        ut tellus erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; Mauris congue ac leo sed volutpat. Aenean sodales urna a
+        magna dapibus, vestibulum ullamcorper libero ullamcorper. Nulla ipsum tellus, lacinia
+        quis blandit a, blandit et est. Aenean dapibus ultrices facilisis. Ut efficitur
+        molestie lorem nec cursus. Sed commodo nisi eget hendrerit facilisis. Aenean condimentum
+        laoreet nulla, ut ultricies erat feugiat sed. Suspendisse quis semper magna. Curabitur
+        vel nisl iaculis, cursus ipsum et, congue dolor. Duis id rhoncus tortor, vel blandit
+        nibh. Ut aliquet, est a condimentum laoreet, nibh leo imperdiet mauris, dictum semper
+        metus magna et risus. Praesent ultricies tellus magna.</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 11:01:03.684286'
+    - '2015-07-17 08:35:22.008544'
+  - - '6'
+    - column5
+    - |
+      --- "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non suscipit
+        augue. Nulla facilisi. Integer faucibus gravida facilisis. In luctus nec nunc vitae
+        tincidunt. Nam in massa ex. Cum sociis natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Suspendisse potenti. Sed maximus, felis at commodo
+        pharetra, elit metus mattis leo, quis maximus lorem magna in risus.</p><p>Sed facilisis
+        placerat augue tempor congue. Quisque quis hendrerit eros, vel vulputate justo.
+        Donec condimentum arcu vitae leo mollis, eu fringilla odio bibendum. Curabitur iaculis
+        fringilla iaculis. Etiam egestas odio non felis suscipit, vel interdum nunc consequat.
+        Donec pellentesque maximus diam id pellentesque. Nulla non lobortis quam, a vulputate
+        augue. Donec metus sapien, congue ut tellus et, blandit egestas leo. Vivamus semper
+        condimentum velit, at congue lorem porta sed. Vestibulum massa metus, pharetra non
+        risus ac, efficitur venenatis diam.</p><p>Vestibulum mattis vel augue sed mattis.
+        Integer lorem lorem, ornare ac ullamcorper at, sollicitudin suscipit eros. Donec
+        ut tellus erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; Mauris congue ac leo sed volutpat. Aenean sodales urna a
+        magna dapibus, vestibulum ullamcorper libero ullamcorper. Nulla ipsum tellus, lacinia
+        quis blandit a, blandit et est. Aenean dapibus ultrices facilisis. Ut efficitur
+        molestie lorem nec cursus. Sed commodo nisi eget hendrerit facilisis. Aenean condimentum
+        laoreet nulla, ut ultricies erat feugiat sed. Suspendisse quis semper magna. Curabitur
+        vel nisl iaculis, cursus ipsum et, congue dolor. Duis id rhoncus tortor, vel blandit
+        nibh. Ut aliquet, est a condimentum laoreet, nibh leo imperdiet mauris, dictum semper
+        metus magna et risus. Praesent ultricies tellus magna.</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 11:01:03.685617'
+    - '2015-07-17 08:35:22.012514'
+  - - '7'
+    - content
+    - |
+      --- '<h3 style="text-align: center;">Контакты:</h3><h4 style="text-align: center;">123000
+        г. Москва, Московский тупик, д.3, стр.2, оф.1</h4>'
+    - '2'
+    - Comfy::Cms::Page
+    - '2015-07-16 11:18:38.329536'
+    - '2015-07-17 08:34:14.329657'
+  - - '8'
+    - slogan
+    - |
+      --- "<h1 class=\"text-center\">\r\n  Lorem Ipsum\r\n</h1>\r\n<p class=\"text-center\">\r\n
+        \ О, сколько нам открытий чудных\r\n</p>\r\n<p class=\"text-center\">\r\n  Готовит
+        просвещенья дух...\r\n</p>\r\n<p>\r\n  Логин: admin@example.com\r\n</p>\r\n<p>\r\n
+        \ Пароль: password\r\n</p>"
+    - '1'
+    - Comfy::Cms::Page
+    - '2015-07-16 12:43:28.894421'
+    - '2015-07-17 08:42:23.918068'
+
+---
+comfy_cms_snippets:
+  columns:
+  - id
+  - site_id
+  - label
+  - identifier
+  - content
+  - position
+  - is_shared
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - '1'
+    - footer
+    - footer
+    - "<div class=\"row\">\r\n  <div class=\"large-6 columns\">\r\n    © Copyright.
+      2014. ООО \"Открытья чудные\"\r\n  </div>\r\n  <div class=\"large-6 columns\">\r\n
+      \   {{ cms:partial:home/footernav }}\r\n  </div>\r\n</div>\r\n"
+    - '0'
+    - false
+    - '2015-07-16 11:05:03.570026'
+    - '2015-07-17 08:36:44.388393'

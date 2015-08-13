@@ -1,0 +1,31 @@
+doctype 5
+|<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
+|<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+|<!--[if IE 8]><html class="no-js lt-ie9" lang="ru"> <![endif]-->
+|<!--[if gt IE 8)><!-->
+html.no-js(lang="ru")
+  |<!--<![endif]-->
+  head
+    meta charset="utf-8"
+    /[if IE]
+      meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title
+      - if content_for(:title)
+        = yield :title
+      - elsif @cms_page
+        = "#{@cms_site.label} | #{@cms_page.label}"
+      - else
+        |Application
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag comfy_cms_render_css_path(@cms_site.id, @cms_layout.identifier) if @cms_site
+	= javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag comfy_cms_render_js_path(@cms_site.id, @cms_layout.identifier) if @cms_site
+  body
+    .row.full-width
+      .columns
+        header.border-bottom
+          = render 'layouts/navigation'
+          = render 'layouts/messages'
+    main(role='main')
+      = yield

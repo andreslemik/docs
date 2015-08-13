@@ -1,0 +1,41 @@
+- title = 'Акты сверок'
+h3 = title
+
+- user_logist = current_user.has_role? :logist
+table
+  thead
+    tr
+      th
+      th ID
+      th Дистрибьютор
+      th.text-center(colspan="2") Период
+      th Ссылка
+      th Комментарий
+      th(colspan="2") Действия
+
+  tbody
+    - @revises.each do |revise|
+      - pending = revise.state == 'pending'
+      tr
+        - if user_logist
+          - lnk = link_to icon(:unlock, :medium), fix_revise_path(revise), data: {:confirm => 'Заблокировать изменение?'}, title: 'Зафиксировать'
+          - lnk_unfix = link_to icon(:lock, :medium), unfix_revise_path(revise), data: {confirm: 'Разблокировать?'}, title: 'Разблокировать'
+          td = pending ? lnk : lnk_unfix
+        - else
+          td = pending ? icon(:unlock, :medium) : icon(:lock, :medium)
+        td.text-center = revise.id
+        td = revise.distributor.name unless revise.distributor.nil?
+        td = revise.date_begin.to_time.to_s(:ru_date)
+        td = revise.date_end.to_time.to_s(:ru_date)
+        td.text-center = link_to icon(:download, :medium), download_revise_path(revise), title: 'Открыть', target: '_blank' if !revise.file.blank?
+        td = revise.memo
+        /td = link_to icon(:eye, :medium), revise, title: 'Открыть'
+        td = link_to icon(:pencil, :medium), edit_revise_path(revise), title: 'Изменить' if pending
+        td = link_to icon(:trash, :medium), revise, data: {:confirm => 'Вы уверены?'}, :method => :delete, title: 'Удалить' if pending
+
+br
+
+= link_to 'Добавить', new_revise_path, class: 'button secondary'
+
+- content_for :title
+  = title

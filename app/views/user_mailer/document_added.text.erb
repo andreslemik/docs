@@ -1,0 +1,6 @@
+К заказу №<%= @order.id %> добавлен документ:
+<%= @document.document_type.name %>
+<%- unless @document.summa.blank? %>
+    на сумму <%= @document.summa %>
+<%- end %>
+Добавил: <%= @document.user.full_name %>(<%= @document.user.email %>)

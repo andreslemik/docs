@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 
+  nomenclature_id: 
+  partner_number: 01
+  quantity: 1
+  price: 
+
+two:
+  order_id: 
+  nomenclature_id: 
+  partner_number: 02
+  quantity: 1
+  price: 

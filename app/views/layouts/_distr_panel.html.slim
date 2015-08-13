@@ -1,0 +1,9 @@
+.panel
+  h5 Дистрибьютор
+  ul.button-group
+    li = link_to "Заказы", orders_path, class: 'button secondary', data: {push: 'true', target: '#main'}
+    li = link_to 'Счета и платёжки', invoices_path, class: 'button secondary', data: {push: 'true', target: '#main'}
+    li = link_to 'Накладные и сч-ф', delivers_path, class: 'button secondary', data: {push: 'true', target: '#main'}
+    li = link_to 'Акты сверок', revises_path, class: 'button secondary', data: {push: 'true', target: '#main'}
+    - cl = 'fi-mail icon-mail'
+    li = link_to "<i class='#{cl}' id='mailbox'></i>".html_safe, messages_path, class: 'button secondary'

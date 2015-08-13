@@ -1,0 +1,31 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.pulseit { 
+  -webkit-animation: pulse linear .5s infinite; 
+  animation: pulse linear .5s infinite; 
+  } 
+@-webkit-keyframes pulse { 
+  0% { width:200px; } 
+  50% { width:240px; } 
+  100% { width:200px; } 
+  } 
+@keyframes pulse { 
+  0% { width:100px; } 
+  50% { width:140px; } 
+  100% { width:100px; } }
+  
+.flashit{ 
+  -webkit-animation: flash linear 1s infinite; 
+  animation: flash linear 1s infinite; 
+  } 
+@-webkit-keyframes flash { 
+  0% { opacity: 1; } 
+  50% { opacity: .1; } 
+  100% { opacity: 1; } 
+  } 
+@keyframes flash { 
+  0% { opacity: 1; } 
+  50% { opacity: .1; } 
+  100% { opacity: 1; } 
+  }

@@ -1,0 +1,5 @@
+<% order_version = @order.versions.last %>
+<% update_date = Russian::strftime(order_version.created_at.localtime, "%d %B %Y %H:%M") %>
+Заказ №<%= @order.id %> (<%= @order.distributor.name %>) был изменён <%= update_date %> (MSK)
+<% updated_user = User.find_by_id(order_version.whodunnit) %>
+Автор изменений: <%= updated_user.full_name %> (<%= updated_user.email %>)

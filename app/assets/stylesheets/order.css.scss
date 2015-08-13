@@ -1,0 +1,22 @@
+@mixin bold-font {
+  font-weight: bold;
+}
+.accepted {
+  background-color: yellow;
+  color: black !important;
+  @include bold-font;
+}
+.shipped {
+  background-color: blue;
+  color: white !important;
+  @include bold-font;
+}
+.paid {
+  background-color: green;
+  color: yellow !important;
+  @include bold-font;
+}
+
+.total-row {
+  font-weight: bold !important;
+}

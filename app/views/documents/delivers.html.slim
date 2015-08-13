@@ -1,0 +1,11 @@
+- title = 'Накладные и счета-фактуры'
+- set_title(title)
+.row
+  .large-5.columns
+    h3 = title
+.row
+  .large-9.columns
+    #documents
+      == render partial: 'documents_table'
+  .large-3.columns
+    == render partial: 'filter', locals: { tab: 'delivers' }

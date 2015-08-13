@@ -1,0 +1,24 @@
+.row
+  .small-5.columns
+    dl
+      dt Партнёрский номер
+      dd = @nomenclature.partner_number
+      dt Наименование
+      dd = @nomenclature.name
+  - if current_user.can_update?(@nomenclature)
+    .small-5.columns
+      table
+        tr
+          th Дистрибьютор
+          th Цена
+        - @prices.each do |price|
+          tr
+            td = price.distributor.name
+            td.currency = number_to_currency(price.price)
+.row
+  .small-12.large-centered.columns
+    ul.button-group
+      li
+        = link_to 'Изменить', edit_nomenclature_path(@nomenclature), class: 'button secondary small', data: {push: true, target: '#main'}
+      li
+        = link_to 'Назад', nomenclatures_path, class: 'button secondary small', data: {push: true, target: '#main'}

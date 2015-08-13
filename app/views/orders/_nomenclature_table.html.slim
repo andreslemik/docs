@@ -1,0 +1,11 @@
+table
+  - unless @nomenclatures.empty?
+    - @nomenclatures.each do |nom|
+      tr
+        td = link_to icon(:plus, :medium), '#', class: 'select-nomenclature', data: {nomenclature_id: nom.id, price_id: nom.prices.first.id, no_turbolink: true}
+        td = nom.partner_number
+        td = nom.name
+        td.currency.text-right = number_to_currency(nom.prices.first.price)
+  - else
+    p Для этого дистрибьютора не заданы цены номенклатуры
+    = link_to 'Перейти в справочник номенклатуры', nomenclatures_path, class: 'button secondary'

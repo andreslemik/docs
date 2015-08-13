@@ -1,0 +1,13 @@
+.row
+  .large-9.large-centered.columns
+    - distrs = Distributor.all
+    dl.sub-nav
+      dt Дистрибьютор:
+      - distrs.each do |d|
+        dd = link_to "#{d.name}", "set_distr/#{d.id}", remote: true, data: {distributor_id: d.id}
+    #n-list
+      h2 Выбор номенклатуры
+
+
+
+= link_to icon(:"x-circle", :medium), '#', class: 'close-reveal-modal'

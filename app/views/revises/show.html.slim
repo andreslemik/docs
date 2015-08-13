@@ -1,0 +1,27 @@
+- title = "Акт сверки №#{@revise.id}"
+h3 = title
+p#notice = notice
+
+p
+  strong Date begin:
+  = @revise.date_begin
+p
+  strong Date end:
+  = @revise.date_end
+p
+  strong Memo:
+  = @revise.memo
+p
+  strong Distributor:
+  = @revise.distributor
+p
+  strong Deleted at:
+  = @revise.deleted_at
+
+= link_to 'Edit', edit_revise_path(@revise)
+'|
+= link_to 'Back', revises_path
+
+
+- content_for :title
+  = title

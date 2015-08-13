@@ -1,0 +1,40 @@
+= paginate @documents, param_name: 'doc_page', options: {data: { push: 'partial', target: '#documents' } }
+- logist = current_user.has_role? :logist
+table
+  tr
+    th Дата
+    th Номер
+    th Сумма
+    th Тип
+    - if logist
+      th Дисти
+    th Комментарий
+    th Заказ
+    th(colspan="4") Действия
+  - @documents.each do |doc|
+    tr
+      td = doc.doc_date.strftime('%d.%m.%Y') unless doc.doc_date.blank?
+      td.text-center = doc.doc_no
+      td.currency = number_to_currency(doc.summa)
+      td = doc.document_type.name
+      - if logist
+        td = doc.distributor.name
+      td = doc.memo
+      td.text-center = link_to "#{doc.order.id}", order_path(doc.order), data: { push: 'true', target: '#main'}
+      td = link_to icon(:pencil, :medium), edit_document_path(doc), data: { push: 'true', target: '#main'} if doc.updatable_by?(current_user)
+      td = link_to icon(:eye, :medium), document_path(doc), title: 'Посмотреть', target: '_blank'
+      td = link_to icon(:download, :medium), download_document_path(doc), title: 'Скачать', target: '_blank'
+      td = link_to icon(:trash, :medium), doc, data: {:confirm => 'Вы уверены?'}, method: :delete, title: 'Удалить' if doc.deletable_by?(current_user)
+
+- if @documents.blank? && params[:q]
+  - if params[:q][:order_id_eq]
+    .row
+      .large-6.large-centered.columns
+        - order_id = params[:q][:order_id_eq]
+        - if @order = Order.find_by_id(order_id)
+          = link_to 'Добавить документ', new_order_document_path(@order), class: 'button secondary tiny'
+        - else
+          p = "Заказ №#{order_id} не существует"
+
+
+= paginate @documents, param_name: 'doc_page', options: {data: { push: 'partial', target: '#documents' } }

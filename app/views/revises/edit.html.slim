@@ -1,0 +1,12 @@
+- title = 'Редактирование акта сверки'
+- set_title(title)
+h3 = title
+.row
+  .large-8.large-centered.columns
+    == render 'form'
+
+.row
+  .large-8.large-centered.columns
+    ul.button-group
+      li = link_to 'Показать', @revise, class: 'button secondary'
+      li = link_to 'Назад', revises_path, class: 'button secondary'

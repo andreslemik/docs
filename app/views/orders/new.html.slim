@@ -1,0 +1,12 @@
+- title = "Новый заказ"
+.row
+  .large-12.columns
+    h2 = title
+    - if current_user.has_role? :distributor
+      == render 'form'
+    - else
+      == render 'form_logist'
+
+    = link_to 'Назад', orders_path, class: 'button secondary small'
+
+- set_title(title)

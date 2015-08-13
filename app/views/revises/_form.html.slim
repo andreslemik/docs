@@ -1,0 +1,27 @@
+= simple_form_for(@revise) do |f|
+  = f.error_notification
+  .form-inputs
+    .row
+      .large-4.columns
+        - if current_user.has_role? :logist
+          = f.association :distributor, label: 'Дистрибьютор'
+        - else
+          = f.association :distributor, as: :hidden, input_html: {value: @distributor_id}
+
+      .large-4.columns
+        = f.input :date_begin, as: :datepicker, label: 'Начало периода', \
+        	 input_html: {value: @revise.date_begin.blank? ? '' : @revise.date_begin.strftime('%d.%m.%Y')}
+      .large-4.columns
+        = f.input :date_end, as: :datepicker, label: 'Конец периода', \
+        	 input_html: {value: @revise.date_end.blank? ? '' : @revise.date_end.strftime('%d.%m.%Y')}
+    .row
+      .large-12.columns
+        = f.input :memo, label: 'Комментарий'
+    .row
+      .large-6.large-centered.columns
+        = f.input :file, as: :file, label: false
+
+    .row
+      .large-6.large-centered.columns
+        .form-actions
+          = f.button :submit, 'Сохранить'

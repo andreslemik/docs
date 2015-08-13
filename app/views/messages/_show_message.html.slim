@@ -1,0 +1,5 @@
+.panel
+  h4 = message.subject
+  p = sanitize message.body
+  - unless message.attachment.blank?
+    p = link_to "#{message.attachment.file.filename} (#{number_to_human_size(message.file_size)})", download_message_path(message)

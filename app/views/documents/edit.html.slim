@@ -1,0 +1,12 @@
+- title = 'Редактирование документа'
+- set_title(title)
+h3 = title
+.row
+  .large-8.large-centered.columns
+    == render 'form'
+
+.row
+  .large-8.large-centered.columns
+    ul.button-group
+      li = link_to 'Показать', @document, class: 'button secondary', data: { push: true, target: '#main'}
+      li = link_to 'Назад', @back_url, class: 'button secondary', data: { push: true, target: '#main'}

@@ -1,0 +1,21 @@
+- user_logist = current_user.has_role? :logist
+.form-inputs
+    .row
+      .large-3.columns
+        = f.input :doc_no, label: false, input_html: { placeholder: 'Номер' }
+        .row.collapse
+          .large-10.columns
+            = f.input :doc_date, as: :datepicker, label: false, \
+              input_html: { placeholder: 'Дата', value: @document.doc_date.blank? ? '' : @document.doc_date.strftime('%d.%m.%Y') }
+          .large-2.columns
+            span.postfix#clear-datepicker(data-no-turbolinks="true") X
+        = f.input :summa, as: :currency, label: false, input_html: { placeholder: 'Сумма' }
+        = f.association :document_type, label: 'Тип документа', collection: user_logist ? DocumentType.all : DocumentType.for_distributor
+      .large-9.columns
+        = f.input :memo, label: 'Комментарий:', input_html: {rows: 4}
+        = f.input :file, as: :file, label: false
+
+.row
+  .large-6.large-centered.columns
+    .form-actions
+      = f.button :submit, 'Сохранить'

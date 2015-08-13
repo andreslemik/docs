@@ -1,0 +1,15 @@
+== README
+
+This is a sample application.
+
+To start:
+
+* <tt>git clone git@github.com:andreslemik/docs.git</tt>
+* <tt>cd ./docs</tt>
+* <tt>bundle install</tt>
+* <tt>rake db:create</tt>
+* <tt>rake db:schema:load</tt>
+* <tt>rake db:data:load</tt>
+* <tt>rails s</tt>
+and go to http://localhost:3000
+

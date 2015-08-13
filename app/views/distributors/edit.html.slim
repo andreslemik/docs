@@ -1,0 +1,14 @@
+.row
+  .small-6.large-centered.columns
+    - title = 'Изменение дистрибьютора'
+    h2 = title
+
+    == render 'form'
+
+    ul.button-group
+      li
+        = link_to 'Назад', distributors_path, class: 'button secondary small'
+
+- content_for :title
+  = title
+

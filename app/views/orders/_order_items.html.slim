@@ -1,0 +1,19 @@
+table
+  th Партнерский номер
+  th Описание
+  th Цена
+  th Кол-во
+  th Сумма
+  th НДС
+  - @order_items.each do |oi|
+    tr
+      td = oi.partner_number
+      td = oi.nomenclature.name
+      td.currency = number_to_currency(oi.price)
+      td.text-center = oi.quantity
+      td.currency = number_to_currency(oi.summa)
+      td.currency = number_to_currency(oi.nds)
+  tr.total-row
+    td(colspan="4") Всего:
+    td.currency = number_to_currency(@order.total_summa)
+    td.currency = number_to_currency(@order.total_nds)

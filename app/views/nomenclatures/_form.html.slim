@@ -1,0 +1,28 @@
+= simple_nested_form_for @nomenclature do |f|
+  = f.error_notification
+  .row
+    .large-6.columns
+      fieldset
+        legend Параметры номенклатуры
+        = f.input :partner_number, label: 'Партнерский номер'
+        = f.input :name, as: :text, label: 'Наименование', input_html: {rows: 5, style: 'width: 100%'}
+        = f.label :archived, 'В архив'
+        .switch
+          = f.check_box :archived
+          = f.label :archived
+    .large-6.columns
+      fieldset
+        legend Цены
+        table#prices
+          tr
+            th
+            th(width="300") Дистрибьютор
+            th Цена
+          = f.simple_fields_for :prices, wrapper: false do |ff|
+            tr.fields
+              td = ff.link_to_remove '<i class="fi-trash icon-medium"></i>'.html_safe, title: 'Удалить'
+              td = ff.association :distributor, label: false
+              td = ff.input :price, as: :currency, label: false
+        p = f.link_to_add '<i class="fi-plus icon-medium"></i>'.html_safe, :prices, data: {target: '#prices'}, title: 'Добавить цену'
+  .form-actions
+    = f.button :submit, 'Сохранить'

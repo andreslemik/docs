@@ -1,0 +1,5 @@
+- model_var.errors.each do |name, msg|
+  - if msg.is_a?(String)
+    .alert-box class="#{name.to_s == 'notice' ? 'success' : 'alert'}" data-alert=""
+      = content_tag :div, msg, id: "error_#{name}", class: 'text-center'
+      a.close href="#" &times;

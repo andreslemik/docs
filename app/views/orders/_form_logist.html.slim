@@ -1,0 +1,111 @@
+= simple_nested_form_for @order do |f|
+  = f.error_notification
+  - new_order = current_page?(action: 'new')
+  - create_items = current_user.can_create?(OrderItem, :for => @order)
+  .row
+    .small-8.column
+      fieldset
+        legend Позиции заказа
+        table#items
+          tr
+            th
+            th
+            th Партнерский номер
+            th Цена
+            th Кол-во
+            th Сумма
+            th НДС
+            th
+          = f.simple_fields_for :order_items, wrapper: false do |oi|
+            tr.fields
+              td = link_to icon(:book, :medium), '#', class: 'open-search-nomenclature', data: {no_turbolink: true} \
+								 if create_items
+              td = oi.association :nomenclature, as: :hidden
+              td(width="230") = oi.input :partner_number, label: false
+              td = oi.input :price, as: :string, label: false, input_html: {readonly: true, class: 'text-right'}
+              td.quantity-fields = oi.input :quantity, label: false, input_html: {class: 'text-center'}
+              td = oi.input :summa, label: false, input_html: {class: 'text-right', readonly: true}
+              td(width="80") = oi.input :nds, label: false, input_html: {class: 'text-right', readonly: true}
+              td = oi.link_to_remove icon(:trash, :medium), title: 'Удалить' if create_items
+        .row
+          .small-6.columns
+            p = f.link_to_add icon(:plus, :medium), :order_items, data: {target: '#items'}, title: 'Добавить позицию' \
+							 if create_items && !@nomenclatures.nil?
+            input#ids(type="hidden")
+        - if create_items
+          .reveal-modal#nomenclature(data-reveal)
+            == render 'nomenclature_search'
+      .row
+        .large-4.large-centered.columns
+          .actions
+            = f.button :submit, 'Сохранить' unless params[:distributor_id].blank? && @order.distributor.nil?
+      .row
+        .large-4.large-centered.columns
+          ul.button-group
+            li
+              = link_to 'Показать', @order, class: 'button secondary small', data: {push: true, target: '#main'}
+            li
+              = link_to 'Назад', orders_path, class: 'button secondary small', data: {push: true, target: '#main'}
+
+    .small-4.columns
+      - unless new_order
+        .panel
+          - if @order.state == 'pending' && !@order.id.nil?
+            = link_to 'Согласовать', accept_order_path(@order), data: {:confirm => 'Согласовать заказ?'}, class: 'button tiny'
+          - if @order.state == 'accepted'
+            ul.button-group
+              li = link_to 'Заказ отгружен', ship_order_path(@order), data: {confirm: 'Заказ отгружен?'}, class: 'button tiny'
+              li = link_to 'Заказ оплачен', pay_order_path(@order), data: {confirm: 'Заказ оплачен?'}, class: 'button tiny'
+              li = link_to 'Отменить согласование', unaccept_order_path(@order), \
+								 data: {confirm: 'Отменить согласование?'}, class: 'button tiny secondary'
+          - if @order.state == 'paid'
+            ul.button-group
+              /li = link_to 'Заказ отгружен', ship_order_path(@order), data: {confirm: 'Заказ отгружен?'}, class: 'button tiny'
+              li = link_to 'Отменить оплату', unpay_order_path(@order), data: {confirm: 'Убрать отметку об оплате?'}, \
+								 class: 'button tiny secondary'
+          - if @order.state == 'shipped'
+            ul.button-group
+              li = link_to 'Заказ оплачен', pay_order_path(@order), data: {confirm: 'Заказ оплачен?'}, class: 'button tiny'
+              li = link_to 'Отменить отгрузку', unship_order_path(@order), data: {confirm: 'Отменить отгрузку?'}, class: 'button tiny secondary'
+      fieldset
+        legend Параметры заказа
+        - if new_order
+          -if @distr.blank?
+            = f.association :distributor, label: 'Дистрибьютор', required: true
+          - else
+            = f.association :distributor, as: :hidden, input_html: {value: @distr}
+        p
+          = "Дистрибьютор: #{@order.distributor.name}" unless new_order
+          = @distr.blank? ? '' : "Дистрибьютор: #{Distributor.find(@distr).name}" if new_order
+
+        p == "Статус: <span class=\"#{@order.state_name} button tiny\">#{@order.human_state_name}</span>"
+        /- if @order.pending?
+        = f.input :memo, label: 'Комментарий', input_html: {rows: 3}
+        /- else
+					= "Комментарий: #{@order.memo}"
+        = f.association :user, as: :hidden, input_html: {value: @order.user_id.blank? ? User.current.id : @order.user_id}
+        - if @distributor_id != 0
+          = f.association :distributor, as: :hidden, input_html: {value: @order.distributor_id.blank? ? @distributor_id : @order.distributor_id}
+        - else
+          = f.association :distributor, as: :hidden, input_html: {value: @order.distributor_id.blank? ? @distr : @order.distributor.id}
+            /fieldset
+				legend Документы
+				table#documents
+					tr
+						th 
+						th Тип
+						th Файл
+					= f.simple_fields_for :documents, wrapper: false do |ff|
+						tr.fields
+							- if ff.object.new_record?
+								td = ff.link_to_remove icon(:trash, :medium), title: 'Удалить'
+								td = ff.association :document_type, label: false
+								td = ff.input :file, as: :file, label: false
+								td = ff.association :user, as: :hidden, input_html: { value: User.current.id }
+							- else
+								td = ff.link_to_remove icon(:trash, :medium), title: 'Удалить' if ff.object.deletable_by?(current_user)
+								td = ff.object.document_type.name
+								td = link_to icon(:download, :medium), "/docs/get/#{ff.object.id}", title: 'Открыть', target: '_blank'
+				p = f.link_to_add icon(:plus, :medium), :documents, data: { target: '#documents' }, title: 'Добавить файл' unless @order.state == 'shipped'
+
+	

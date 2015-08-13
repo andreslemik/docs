@@ -1,0 +1,16 @@
+= simple_form_for(@message) do |f|
+  .row
+    .large-6.columns
+      hr
+      - if @user_roles.include?('logist')
+        p = "Получатель: #{@parent.user.full_name} (#{@parent.user.distributor.try(:name)})"
+      = f.input :subject, label: 'Тема:', input_html: {value: 'Re: ' + @parent.subject}
+      = f.input :body, label: false, input_html: {placeholder: 'Текст сообщения'}
+      = f.input :attachment, as: :file, label: false
+      = f.association :user, as: :hidden, input_html: {value: @message.user_id.blank? ? User.current.id : @message.user_id}
+      = f.simple_fields_for(:recipients) do |r|
+        = r.input :user_id, as: :hidden
+      hr
+      = f.button :submit, 'Отправить'
+    .large-6.columns
+      = render partial: 'show_message', locals: {message: @parent}

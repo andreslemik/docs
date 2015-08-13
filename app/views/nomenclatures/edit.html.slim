@@ -1,0 +1,15 @@
+- title = 'Изменение номенклатуры'
+.row
+  .small-9.large-centered.columns
+    h2 = title
+
+    == render 'form'
+
+    ul.button-group
+      li
+        = link_to 'Показать', @nomenclature, class: 'button secondary small', data: {push: true, target: '#main'}
+      li
+        = link_to 'Назад', nomenclatures_path, class: 'button secondary small', data: {push: true, target: '#main'}
+
+- set_title(title)
+

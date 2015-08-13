@@ -1,0 +1,26 @@
+.row
+  .large-12.columns
+    = link_to('Архив', archived_nomenclatures_path, data: {push: true, target: '#main'}) unless @arch
+    = link_to('Основной список', nomenclatures_path, data: {push: true, target: '#main'}) if @arch
+br
+- distrs = Distributor.all.count
+.row#nomenclature
+  .large-12.columns
+    = paginate @nomenclatures, options: {data: {push: true, target: '#main'}}
+    table
+      tr
+        th П.номер
+        th Наименование
+        th Примечание
+        th
+        th
+        th
+      - @nomenclatures.each do |nomenclature|
+        tr
+          td = nomenclature.partner_number
+          td = nomenclature.name
+          td = icon(:info, :medium) + "Заданы не все цены".html_safe if nomenclature.distributors.count < distrs
+          td = link_to icon(:eye, :medium), nomenclature, title: 'Открыть', data: {push: true, target: '#main'}
+          td = link_to icon(:pencil, :medium), edit_nomenclature_path(nomenclature), title: 'Изменить', \
+            data: {push: true, target: '#main'} if current_user.can_update?(nomenclature)
+          td = link_to icon(:trash, :medium), nomenclature, data: {:confirm => 'Вы уверены?'}, :method => :delete, title: 'Удалить' if current_user.can_delete?(nomenclature)

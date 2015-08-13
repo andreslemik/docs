@@ -1,0 +1,11 @@
+.row
+  .small-6.large-centered.columns
+    - title = 'Новый дистрибьютор'
+    h2 = title
+
+    == render 'form'
+
+    = link_to 'Назад', distributors_path, class: 'button secondary small'
+
+-content_for :title
+  = title

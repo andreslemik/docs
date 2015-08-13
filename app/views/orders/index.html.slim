@@ -1,0 +1,14 @@
+- title = 'Список заказов'
+- set_title(title)
+.row
+  .large-3.columns
+    h3 = title
+  .large-2.columns.end
+    = link_to "Добавить новый", new_order_path + '#', class: 'button secondary tiny'
+.row
+  .large-9.columns
+    #orders
+      == render partial: 'orders/orders_table'
+  .large-3.columns
+    == render 'filter'
+

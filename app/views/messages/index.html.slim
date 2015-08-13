@@ -1,0 +1,10 @@
+- set_title(@title)
+dl.sub-nav
+  dt Сообщения:
+  dd = active_link_to 'Входящие', messages_path, wrap_tag: :dd, data: {push: true, target: '#main'}
+  dd = active_link_to 'Исходящие', outbox_path, wrap_tag: :dd, data: {push: true, target: '#main'}
+
+= link_to 'Новое', new_message_path, class: 'button secondary tiny', data: {push: true, target: '#main'}
+
+#messages
+  == render partial: 'messages_table'

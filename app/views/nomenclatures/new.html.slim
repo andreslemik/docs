@@ -1,0 +1,10 @@
+- title = 'Новая позиция номенклатуры'
+.row
+  .small-10.large-centered.columns
+    h2 = title
+
+    == render 'form'
+
+    = link_to 'Назад', nomenclatures_path, class: 'button secondary small', data: {push: true, target: '#main'}
+
+- set_title(title)
